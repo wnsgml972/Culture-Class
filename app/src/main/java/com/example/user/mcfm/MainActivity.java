@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 getWindow().setStatusBarColor(Color.parseColor("#7a9a82"));
             }
-        }
+        }else getWindow().setStatusBarColor(Color.parseColor("#000"));
     }
 
     private void setInit() {

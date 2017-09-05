@@ -13,10 +13,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.example.user.mcfm.R;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Iterator;
 
 import static android.R.id.list;
 
@@ -56,9 +60,52 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
                 DatabaseReference root = reference.child(key);
 
+                HashMap<String,Object> objectHashMap = new HashMap<String,Object>();
 
+                objectHashMap.put("name",name);
+                objectHashMap.put("text",editText.getText().toString());
+
+                root.updateChildren(objectHashMap);
+                editText.setText("");
+                reference.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) { //아이탬을 검색하거나 추가가있을때
+                        chatConversation(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) { //아이탬의 변화가 있을때 수신
+                        chatConversation(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
                 break;
         }
 
+    }
+    private void chatConversation(DataSnapshot dataSnapshot){
+        String chat_name,chat_msg;
+        Iterator i = dataSnapshot.getChildren().iterator();
+
+        while(i.hasNext()){
+            chat_name = (String)((DataSnapshot)i.next()).getValue();
+            chat_msg = (String)((DataSnapshot)i.next()).getValue();
+            arrayAdapter.add(chat_name+" : "+chat_msg);
+        }
+        arrayAdapter.notifyDataSetChanged();
     }
 }

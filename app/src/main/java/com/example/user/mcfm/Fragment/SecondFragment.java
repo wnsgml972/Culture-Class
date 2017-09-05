@@ -30,6 +30,7 @@ import static android.R.id.list;
 
 public class SecondFragment extends Fragment implements View.OnClickListener{
 
+
     private ListView listView;
     private EditText editText;
     private ImageButton imageButton;

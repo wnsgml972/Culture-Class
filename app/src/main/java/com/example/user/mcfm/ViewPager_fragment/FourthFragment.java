@@ -1,4 +1,4 @@
-package com.example.user.mcfm.Fragment;
+package com.example.user.mcfm.ViewPager_fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,11 +14,11 @@ import com.example.user.mcfm.R;
  * Created by User on 2017-08-20.
  */
 
-public class ThirdFragment extends Fragment {
+public class FourthFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.third,container,false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fourth,container,false);
 
         return layout;
     }

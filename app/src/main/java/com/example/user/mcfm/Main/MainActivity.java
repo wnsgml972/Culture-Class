@@ -1,4 +1,4 @@
-package com.example.user.mcfm;
+package com.example.user.mcfm.Main;
 
 import android.graphics.Color;
 import android.os.Build;
@@ -11,10 +11,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.user.mcfm.Fragment.FirstFragment;
-import com.example.user.mcfm.Fragment.FourthFragment;
-import com.example.user.mcfm.Fragment.SecondFragment;
-import com.example.user.mcfm.Fragment.ThirdFragment;
+import com.example.user.mcfm.ViewPager_fragment.FirstFragment;
+import com.example.user.mcfm.ViewPager_fragment.FourthFragment;
+import com.example.user.mcfm.ViewPager_fragment.SecondFragment;
+import com.example.user.mcfm.ViewPager_fragment.ThirdFragment;
+import com.example.user.mcfm.R;
 
 public class MainActivity extends AppCompatActivity{
     private ViewPager viewPager;
@@ -25,16 +26,16 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         InitViewPager();
         InitStatusbar();
-
     }
     private void InitStatusbar(){
         View view = getWindow().getDecorView();
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             if(view!=null){
                 view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-                getWindow().setStatusBarColor(Color.parseColor("#7a9a82"));
+                getWindow().setStatusBarColor(Color.parseColor("#ffc0cb"));
             }
         }else getWindow().setStatusBarColor(Color.parseColor("#000"));
     }
@@ -65,9 +66,6 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
-    }
-    private void Init(){
-
     }
     private class PagerAdapter extends FragmentStatePagerAdapter{
         public PagerAdapter(FragmentManager fm) {

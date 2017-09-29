@@ -5,15 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:background="#7a9a82"
-        android:layout_weight="6"
+        android:orientation="horizontal"
+        android:background="@color/color_Main"
+        android:layout_weight="5"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         >
+        <ImageView
+
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
         </LinearLayout>
     <android.support.design.widget.TabLayout
+        app:tabIndicatorColor="@color/color_Black"
+        app:tabBackground="@color/color_WHITE"
         app:tabIndicatorHeight="@dimen/cardview_default_elevation"
-        android:layout_weight="5.7"
+        android:layout_weight="5"
         android:id="@+id/tab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

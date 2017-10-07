@@ -6,103 +6,67 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.mcfm.R;
 import com.google.firebase.database.DataSnapshot;
-
-import java.util.Iterator;
-
-import static android.R.id.list;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * Created by User on 2017-08-20.
  */
 
 public class SecondFragment extends Fragment implements View.OnClickListener{
-
-
-    private ListView listView;
+    private Button btn;
+    private TextView textView;
     private EditText editText;
-    private ImageButton imageButton;
-    private ArrayAdapter arrayAdapter;
-    private String name = "Guest";
-    //private DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("message");
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    private DatabaseReference mConditionRef = mDatabase.child("test").child("aaa");
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.second,container,false);
-        listView = (ListView) layout.findViewById(R.id.list);
-        editText = (EditText)layout.findViewById(R.id.chatinput);
-        imageButton = (ImageButton)layout.findViewById(R.id.chatinputBtn);
-        //imageButton.setOnClickListener((View.OnClickListener) getActivity().getApplicationContext());
-        arrayAdapter = new ArrayAdapter<String>(layout.getContext(),android.R.layout.simple_list_item_1,list);
-        listView.setAdapter(arrayAdapter);
+        View view = (LinearLayout)inflater.inflate(R.layout.fragment_second,container,false);
+        btn = (Button)view.findViewById(R.id.btn);
+        textView = (TextView)view.findViewById(R.id.text111);
+        editText = (EditText)view.findViewById(R.id.edit);
+        btn.setOnClickListener(this);
+        return view;
+    }
 
-        return layout;
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mConditionRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String name = dataSnapshot.getValue(String.class);
+                textView.setText(name);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            /*case R.id.chatinputBtn:
-                HashMap<String,Object> map = new HashMap<String,Object>();
-
-                String key = reference.push().getKey();
-                reference.updateChildren(map);
-
-                DatabaseReference root = reference.child(key);
-
-                HashMap<String,Object> objectHashMap = new HashMap<String,Object>();
-
-                objectHashMap.put("name",name);
-                objectHashMap.put("text",editText.getText().toString());
-
-                root.updateChildren(objectHashMap);
+            case R.id.btn:
+                Toast.makeText(getContext(),,Toast.LENGTH_SHORT).show();
+                String chat = String.valueOf(editText.getText());
+                mConditionRef.setValue(chat);
                 editText.setText("");
-                reference.addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(DataSnapshot dataSnapshot, String s) { //아이탬을 검색하거나 추가가있을때
-                        chatConversation(dataSnapshot);
-                    }
-
-                    @Override
-                    public void onChildChanged(DataSnapshot dataSnapshot, String s) { //아이탬의 변화가 있을때 수신
-                        chatConversation(dataSnapshot);
-                    }
-
-                    @Override
-                    public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                    }
-
-                    @Override
-                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-                break;*/
+                break;
         }
 
-    }
-    private void chatConversation(DataSnapshot dataSnapshot){
-        String chat_name,chat_msg;
-        Iterator i = dataSnapshot.getChildren().iterator();
-
-        while(i.hasNext()){
-            chat_name = (String)((DataSnapshot)i.next()).getValue();
-            chat_msg = (String)((DataSnapshot)i.next()).getValue();
-            arrayAdapter.add(chat_name+" : "+chat_msg);
-        }
-        arrayAdapter.notifyDataSetChanged();
     }
 }

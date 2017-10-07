@@ -18,9 +18,9 @@ public class ThirdFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.third,container,false);
+        LinearLayout view = (LinearLayout) inflater.inflate(R.layout.fragment_third,container,false);
 
-        return layout;
+        return view;
     }
 
 }

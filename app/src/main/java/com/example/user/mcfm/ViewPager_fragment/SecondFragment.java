@@ -10,14 +10,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.user.mcfm.Chat_item.ChatData;
 import com.example.user.mcfm.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Random;
 
 /**
  * Created by User on 2017-08-20.
@@ -46,8 +48,9 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         mConditionRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String name = dataSnapshot.getValue(String.class);
-                textView.setText(name);
+                //String name = dataSnapshot.getValue(String.class);
+                ChatData chatData = dataSnapshot.getValue(ChatData.class);
+                textView.setText(chatData.getUsername()+" "+chatData.getMessage());
             }
 
             @Override
@@ -61,9 +64,11 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btn:
-                Toast.makeText(getContext(),,Toast.LENGTH_SHORT).show();
+
+                //Toast.makeText(getContext(),,Toast.LENGTH_SHORT).show();
                 String chat = String.valueOf(editText.getText());
-                mConditionRef.setValue(chat);
+                ChatData chatData = new ChatData(new Random().nextInt(1000)+"",chat);
+                mConditionRef.setValue(chatData);
                 editText.setText("");
                 break;
         }

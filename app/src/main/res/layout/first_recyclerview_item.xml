@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_weight="5"
+        android:layout_margin="5dp"
+        android:id="@+id/first_RecyclerView_Item_Image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/first_recycler_item_image" />
+
+    <LinearLayout
+        android:id="@+id/first_RecyclerView_item_setClick"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="asd"
+                android:id="@+id/first_RecyclerView_Item_Name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left|center"
+                android:textColor="@color/color_Black" />
+
+            <TextView
+                android:layout_weight="1"
+                android:text="asd"
+                android:paddingRight="15dp"
+                android:id="@+id/first_RecyclerView_Item_Place"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right|center"
+                android:textColor="@color/color_Black" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_Gray" />
+    </LinearLayout>
+</LinearLayout>

@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import com.example.user.mcfm.R;
 
 /**
- * Created by User on 2017-08-20.
+ * Created by Choiwongyun on 2017-08-20.
  */
 
 public class ThirdFragment extends Fragment {

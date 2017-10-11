@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.user.mcfm.R;
 
 /**
- * Created by choi on 2017-10-07.
+ * Created by Choiwongyun on 2017-10-07.
  */
 
 public class ChatActivity extends AppCompatActivity {

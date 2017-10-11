@@ -13,24 +13,24 @@ import android.widget.TextView;
 
 import com.example.user.mcfm.Chat_item.ChatData;
 import com.example.user.mcfm.R;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
 /**
- * Created by User on 2017-08-20.
+ * Created by Choiwongyun on 2017-08-20.
  */
 
 public class SecondFragment extends Fragment implements View.OnClickListener{
     private Button btn;
     private TextView textView;
     private EditText editText;
-    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-    private DatabaseReference mConditionRef = mDatabase.child("test").child("aaa");
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,12 +45,27 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mConditionRef.addValueEventListener(new ValueEventListener() {
+        databaseReference.child("aaa").addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                //String name = dataSnapshot.getValue(String.class);
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 ChatData chatData = dataSnapshot.getValue(ChatData.class);
                 textView.setText(chatData.getUsername()+" "+chatData.getMessage());
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
             }
 
             @Override
@@ -64,11 +79,10 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.btn:
-
-                //Toast.makeText(getContext(),,Toast.LENGTH_SHORT).show();
                 String chat = String.valueOf(editText.getText());
                 ChatData chatData = new ChatData(new Random().nextInt(1000)+"",chat);
-                mConditionRef.setValue(chatData);
+                databaseReference.child("aaa").push().setValue(chatData);
+                //mConditionRef.setValue(chatData);
                 editText.setText("");
                 break;
         }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_WHITE"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:layout_width="300dp"
+    android:layout_height="400dp">
+    <LinearLayout
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+        <ImageView
+            android:layout_margin="8dp"
+            android:layout_weight="5"
+            app:srcCompat="@drawable/first_recycler_item_image"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/color_Black"
+            android:layout_weight="1"
+            android:id="@+id/first_RecyclerView_item_Click_dialog_Name"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+        <Button
+            android:text="MATCHING"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:id="@+id/first_RecyclerView_item_Click_dialog_OK"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        <Button
+            android:text="CANCEL"
+            android:layout_margin="12dp"
+            android:layout_weight="1"
+            android:id="@+id/first_RecyclerView_item_Click_dialog_CANCEL"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+
+    </LinearLayout>
+</LinearLayout>

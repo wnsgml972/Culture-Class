@@ -8,5 +8,11 @@
     <color name="color_Main">#ffc0cb</color>
     <color name="color_Gray">#898989</color>
     <color name="color_Lite_Gray">#ececec</color>
+    <color name="theme">#81D3EB</color>
+    <color name="theme2">#555555</color>
+    <color name="theme_text">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="balck">#000000</color>
+    <color name="state_bar_color">#ffffff</color>
 
 </resources>

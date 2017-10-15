@@ -7,5 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="NumberPickerTextColorStyle">
+        <item name="android:textColorPrimary">#000000</item>
+    </style>
 </resources>

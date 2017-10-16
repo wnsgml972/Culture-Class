@@ -19,18 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dialog.TimePickerDialog"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Material.Dialog" />
-        <activity
-            android:name=".Dialog.DatePickerDialog"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.DeviceDefault.Dialog" />
-        <activity
-            android:name=".Dialog.WriteDeleteDialog"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Material.Dialog" />
-        <activity
             android:name=".Function.WriteActivity"
             android:parentActivityName=".Main.MainActivity"
             android:windowSoftInputMode="adjustPan" />

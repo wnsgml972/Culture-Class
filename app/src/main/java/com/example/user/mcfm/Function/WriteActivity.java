@@ -28,8 +28,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.mcfm.DB.DBManager;
-import com.example.user.mcfm.Dialog.DatePickerDialog;
-import com.example.user.mcfm.Dialog.TimePickerDialog;
 import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;

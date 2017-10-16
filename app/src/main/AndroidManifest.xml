@@ -18,14 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Function.WriteActivity"
-            android:parentActivityName=".Main.MainActivity"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".Function.WriteModifyActivity"
-            android:parentActivityName=".Main.MainActivity"
-            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ChatActivity.ChatActivity"/>
         <activity android:name=".Dialog.First_Recycler_Item_Click_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog"

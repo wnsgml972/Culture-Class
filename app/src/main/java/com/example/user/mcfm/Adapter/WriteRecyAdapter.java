@@ -1,7 +1,6 @@
 package com.example.user.mcfm.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.net.Uri;
@@ -15,9 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.user.mcfm.Function.WriteModifyActivity;
 import com.example.user.mcfm.R;
-import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -111,8 +108,6 @@ public class WriteRecyAdapter extends RecyclerView.Adapter<WriteRecyAdapter.View
         }
 
         holder.card_title_view.setText(get_title);
-       /* holder.card_start_time_view.setText(get_starttime.replace("\n" + "hour", "시 ~"));
-        holder.card_end_time_view.setText(" " + get_endtime.replace("\n" + "Hour", "시"));*/
         holder.card_start_time_view.setText(get_starttime + "시 ~");
         holder.card_end_time_view.setText(" " + get_endtime + "시");
         holder.card_position_view.setText(String.valueOf(position + 1));
@@ -120,14 +115,14 @@ public class WriteRecyAdapter extends RecyclerView.Adapter<WriteRecyAdapter.View
         holder.card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, WriteModifyActivity.class);
+               /* Intent intent = new Intent(context, WriteModifyActivity.class);
                 intent.putExtra(Contact.YEAR, Year);
                 intent.putExtra(Contact.MONTH, Month);
                 intent.putExtra(Contact.DAY, DAY);
                 intent.putExtra(Contact.DAY_OF_WEEK, DAY_OF_WEEK);
                 intent.putExtra(Contact.POSITION, position);
                 context.startActivity(intent);
-                context.sendBroadcast(new Intent(Contact.WRITE_LIST_GONE));
+                context.sendBroadcast(new Intent(Contact.WRITE_LIST_GONE));*/
             }
         });
     }

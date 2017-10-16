@@ -29,7 +29,6 @@ import com.example.user.mcfm.Util.Contact;
 import com.example.user.mcfm.Adapter.WriteRecyAdapter;
 import com.example.user.mcfm.DB.DBManager;
 import com.squareup.picasso.Picasso;
-import com.example.user.mcfm.Function.WriteActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -136,12 +135,6 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
                 break;
             case R.id.write_add_btn:
                 WriteListSetVisible(0);
-                Intent intent = new Intent(getContext(), WriteActivity.class);
-                intent.putExtra(Contact.YEAR, Year);
-                intent.putExtra(Contact.MONTH, Month);
-                intent.putExtra(Contact.DAY, Day);
-                intent.putExtra(Contact.DAY_OF_WEEK, DAY_OF_WEEK);
-                startActivity(intent);
                 break;
         }
     }

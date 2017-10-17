@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.user.mcfm.Adapter.First_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.First_RecyclerView_Item;
 import com.example.user.mcfm.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class FirstFragment extends Fragment {
         first_Myprofile_Name = (TextView) view.findViewById(R.id.first_Myprofile_Name);
         first_RecyclerView = (RecyclerView) view.findViewById(R.id.first_RecyclerView);
         setRecyclerView();
+        Picasso.with(getContext()).load(R.drawable.write_add_image).fit().into(first_Myprofile_Image);
         return view;
     }
 
@@ -45,7 +47,8 @@ public class FirstFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //first_Myprofile_Image.setImageResource(R.drawable.logo);
-        //Picasso.with(getContext()).load(R.drawable.logo).into(first_Myprofile_Image);
+
+
     }
 
     private void setRecyclerView(){

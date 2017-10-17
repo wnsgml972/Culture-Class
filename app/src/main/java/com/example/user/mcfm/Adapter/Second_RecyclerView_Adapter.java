@@ -3,6 +3,7 @@ package com.example.user.mcfm.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,7 @@ public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_Rec
                     int position = getAdapterPosition();
                     Intent intent = new Intent(view.getContext(), ChatActivity.class);
                     intent.putExtra("name",second_recyclerView_items.get(position).getName());
+                    Log.e("second_fragment_name",second_recyclerView_items.get(position).getName());
                     view.getContext().startActivity(intent);
                     break;
             }

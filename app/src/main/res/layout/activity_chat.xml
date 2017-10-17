@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    >
+    android:background="@color/color_Lite_Gray">
+
     <android.support.v7.widget.RecyclerView
         android:layout_weight="1"
         android:id="@+id/chat_activity_RecyclerView"
@@ -11,20 +13,21 @@
         android:layout_width="match_parent"
         />
     <LinearLayout
-        android:layout_weight="8"
+        android:layout_weight="7"
         android:orientation="horizontal"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         >
+
         <EditText
-            android:textColor="@color/color_Black"
-            android:layout_weight="1"
             android:id="@+id/editText"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/color_Black" />
+
         <Button
-            android:layout_weight="5"
+            android:layout_weight="7"
             android:id="@+id/btn"
             android:layout_height="match_parent"
             android:layout_width="match_parent"

@@ -10,9 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.user.mcfm.Adapter.ChatActivity_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.ChatActivity_RecyclerView_Item;
@@ -33,7 +36,9 @@ import java.util.List;
 
 public class ChatActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText editText;
-    private Button button;
+    private TextView chat_activity_setName;
+    private ImageView chat_activity_back;
+    private Button button ;
     private String getName;
     private RecyclerView chatActivity_recyclerView;
     private ChatActivity_RecyclerView_Adapter chatActivity_recyclerView_adapter;
@@ -46,6 +51,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_chat);
 
         InitStatusbar_and_Actionbar();
@@ -63,7 +69,16 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+        }
+        return true;
 
+
+    }
     private void init(){
         chatActivity_recyclerView_items = new ArrayList<ChatActivity_RecyclerView_Item>();
         chatActivity_recyclerView  = (RecyclerView)findViewById(R.id.chat_activity_RecyclerView);

@@ -10,27 +10,31 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
+import com.example.user.mcfm.R;
 import com.example.user.mcfm.ViewPager_fragment.FirstFragment;
 import com.example.user.mcfm.ViewPager_fragment.FourthFragment;
 import com.example.user.mcfm.ViewPager_fragment.SecondFragment;
 import com.example.user.mcfm.ViewPager_fragment.ThirdFragment;
-import com.example.user.mcfm.R;
 
 public class MainActivity extends AppCompatActivity{
     private ViewPager viewPager;
     private PagerAdapter pagerAdapter;
     private TabLayout tabLayout;
-
+    private TextView main_activity_setTitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        InitViewPager();
-        InitStatusbar();
+        init();
+        initViewPager();
+        initStatusbar();
     }
-    private void InitStatusbar(){
+    private void init(){
+        main_activity_setTitle = (TextView)findViewById(R.id.main_activity_setTitle);
+    }
+    private void initStatusbar(){
         View view = getWindow().getDecorView();
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             if(view!=null){
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity{
             }
         }else getWindow().setStatusBarColor(Color.parseColor("#000"));
     }
-    private void InitViewPager() {
+    private void initViewPager() {
         viewPager = (ViewPager)findViewById(R.id.ViewPager);
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
@@ -49,6 +53,38 @@ public class MainActivity extends AppCompatActivity{
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
         viewPager.setOffscreenPageLimit(4);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        main_activity_setTitle.setText("매칭");
+                        break;
+                    case 1:
+                        main_activity_setTitle.setText("채팅");
+
+                        break;
+                    case 2:
+                        main_activity_setTitle.setText("달력");
+
+                        break;
+                    case 3:
+                        main_activity_setTitle.setText("설정");
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() { //없으면 연결이 안됨
             @Override
@@ -75,9 +111,12 @@ public class MainActivity extends AppCompatActivity{
         @Override
         public Fragment getItem(int position) {
             switch (position){
-                case 0:return new FirstFragment();
-                case 1:return new SecondFragment();
-                case 2:return new ThirdFragment();
+                case 0:
+                    return new FirstFragment();
+                case 1:
+                    return new SecondFragment();
+                case 2:
+                    return new ThirdFragment();
                 case 3:return new FourthFragment();
             }return null;
         }

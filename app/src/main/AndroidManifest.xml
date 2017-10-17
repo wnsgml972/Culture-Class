@@ -18,7 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatActivity.ChatActivity"/>
+        <activity android:name=".ChatActivity.ChatActivity"
+            android:windowSoftInputMode="adjustUnspecified"
+            android:parentActivityName=".Main.MainActivity"
+            />
         <activity android:name=".Dialog.First_Recycler_Item_Click_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog"
             />

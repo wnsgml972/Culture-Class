@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_WHITE"
     android:orientation="vertical"
-    android:weightSum="10"
+
     android:layout_width="300dp"
     android:layout_height="400dp">
     <LinearLayout
-        android:layout_weight="4"
+        android:layout_weight="3.5"
         android:orientation="horizontal"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -20,9 +20,11 @@
             android:layout_width="match_parent"
             />
         <TextView
+            android:text="asdasd"
+            android:textSize="24sp"
             android:gravity="center"
             android:textColor="@color/color_Black"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:id="@+id/first_RecyclerView_item_Click_dialog_Name"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
@@ -32,32 +34,48 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
+        android:background="@color/color_Lite_Gray"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
 
-        android:orientation="horizontal"></LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="4"
-        android:orientation="horizontal"
-        android:layout_height="match_parent"
+        android:background="@color/color_WHITE"
         android:layout_width="match_parent"
-        >
-        <Button
-            android:text="MATCHING"
-            android:layout_margin="12dp"
-            android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_weight="3.4"
+        android:orientation="horizontal">
+
+        <TextView
             android:id="@+id/first_RecyclerView_item_Click_dialog_OK"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            />
-        <Button
-            android:text="CANCEL"
-            android:layout_margin="12dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/first_RecyclerView_item_Click_dialog_CANCEL"
+            android:gravity="center"
+            android:text="MATCHING"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp" />
+
+        <View
+            android:layout_width="1dp"
             android:layout_height="match_parent"
+            android:background="@color/color_Gray" />
+
+        <TextView
+            android:id="@+id/first_RecyclerView_item_Click_dialog_CANCEL"
             android:layout_width="match_parent"
-            />
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="CANCEL"
+            android:textColor="@color/color_Black"
+            android:textSize="10sp" />
 
     </LinearLayout>
 </LinearLayout>

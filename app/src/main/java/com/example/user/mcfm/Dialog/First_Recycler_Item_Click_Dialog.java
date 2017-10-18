@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.user.mcfm.R;
@@ -17,7 +16,7 @@ import com.example.user.mcfm.R;
 
 public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implements View.OnClickListener {
     private TextView name;
-    private Button ok, cancel;
+    private TextView ok, cancel;
     private String getName;
 
     @Override
@@ -32,8 +31,8 @@ public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implemen
 
     private void setInit() {
         name = (TextView) findViewById(R.id.first_RecyclerView_item_Click_dialog_Name);
-        ok = (Button) findViewById(R.id.first_RecyclerView_item_Click_dialog_OK);
-        cancel = (Button) findViewById(R.id.first_RecyclerView_item_Click_dialog_CANCEL);
+        ok = (TextView) findViewById(R.id.first_RecyclerView_item_Click_dialog_OK);
+        cancel = (TextView) findViewById(R.id.first_RecyclerView_item_Click_dialog_CANCEL);
 
         ok.setOnClickListener(this);
         cancel.setOnClickListener(this);

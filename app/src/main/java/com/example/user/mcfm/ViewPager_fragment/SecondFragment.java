@@ -18,6 +18,8 @@ import com.example.user.mcfm.Adapter.Second_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.Second_RecyclerView_Item;
 import com.example.user.mcfm.Interface.TestCallback;
 import com.example.user.mcfm.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,10 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
     private Second_RecyclerView_Adapter second_recyclerView_adapter;
     private List<Second_RecyclerView_Item> second_recyclerView_items;
     private RecyclerView second_RecyclerView;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); //firebase 접속
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();  //firebase json tree 접근
+    private DatabaseReference chat = firebaseDatabase.getReference("chat");
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -82,4 +88,5 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
             }
         }
     };
+
 }

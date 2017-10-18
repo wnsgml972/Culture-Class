@@ -34,7 +34,7 @@ public class ChatActivity_RecyclerView_Adapter extends RecyclerView.Adapter<Chat
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.chat_name.setText(list.get(position).getChat_name());
+        //holder.chat_name.setText(list.get(position).getChat_name());
         holder.chat_content.setText(list.get(position).getChat_content());
     }
 
@@ -49,7 +49,7 @@ public class ChatActivity_RecyclerView_Adapter extends RecyclerView.Adapter<Chat
 
         public ViewHolder(View itemView) {
             super(itemView);
-            chat_name = (TextView)itemView.findViewById(R.id.chat_item_name);
+            //chat_name = (TextView)itemView.findViewById(R.id.chat_item_name);
             chat_content = (TextView)itemView.findViewById(R.id.chat_item_content);
         }
     }

@@ -76,6 +76,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
             if(intent.getAction().equals("asd")){
                 String getName = intent.getStringExtra("name");
                 Log.e("잘옴!",getName);
+
                 second_recyclerView_items.add(new Second_RecyclerView_Item(getName,getName));
                 second_recyclerView_adapter.notifyDataSetChanged();
             }

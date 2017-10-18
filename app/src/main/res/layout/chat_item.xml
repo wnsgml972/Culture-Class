@@ -11,36 +11,39 @@
         android:layout_weight="5"
         app:srcCompat="@drawable/first_recycler_item_image" />
 
-    <LinearLayout
+    <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
+        <!-- <TextView
             android:id="@+id/chat_item_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center|left"
             android:paddingLeft="5dp"
-            android:textColor="@color/color_Black" />
+            android:textColor="@color/color_Black" />-->
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
+-->
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/chat_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/chat_not_me"
 
-            <TextView
-                android:text="asd"
-                android:id="@+id/chat_item_content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/chat_not_me"
-                android:gravity="center|left"
-                android:paddingLeft="5dp"
-                android:textColor="@color/color_Black" />
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_marginLeft="15dp"
+            android:text="asd"
+            android:textColor="@color/color_Black" />
+    </RelativeLayout>
+    <!--</LinearLayout>-->
 </LinearLayout>

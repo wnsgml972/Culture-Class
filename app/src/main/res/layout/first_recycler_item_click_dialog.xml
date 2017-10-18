@@ -36,8 +36,58 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/color_Lite_Gray"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <TextView
+            android:layout_marginLeft="12dp"
+            android:gravity="center|left"
+            android:textSize="20sp"
+            android:textColor="@color/color_Black"
+            android:text="희망 멘토링"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        <TextView
+            android:id="@+id/click_dialog_metoType"
+            android:layout_marginRight="12dp"
+            android:gravity="center|left"
+            android:textSize="20sp"
+            android:textColor="@color/color_Black"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        <TextView
+            android:text="지역"
+            android:layout_marginLeft="12dp"
+            android:gravity="center|left"
+            android:textSize="20sp"
+            android:textColor="@color/color_Black"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+
+        <TextView
+            android:id="@+id/click_dialog_place"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="12dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:text="소개"
+            android:layout_marginLeft="12dp"
+            android:gravity="center|left"
+            android:textSize="20sp"
+            android:textColor="@color/color_Black"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            />
+        <TextView
+            android:id="@+id/click_dialog_introduce"
+            android:layout_weight="0.8"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />

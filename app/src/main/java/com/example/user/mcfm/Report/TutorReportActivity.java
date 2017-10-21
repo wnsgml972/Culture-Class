@@ -47,22 +47,6 @@ public class TutorReportActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = new Intent(getApplicationContext(), SubmitReportDialog.class);
         startActivity(intent);
-        /*switch (item.getItemId()) {
-            case R.id.quick_action1:
-                //
-                return true;
-            case R.id.action_settings:
-                //
-                return true;
-            case R.id.action_subactivity:
-                startActivity(new Intent(this, SubActivity.class));
-                return true;
-            case R.id.action_navdrawer:
-                startActivity(new Intent(this, NavDrawerActivity.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }*/
         return super.onOptionsItemSelected(item);
     }
 
@@ -90,14 +74,6 @@ public class TutorReportActivity extends AppCompatActivity {
             }
         });
 
-       /* submit = (FloatingActionButton)findViewById(R.id.submit);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SubmitReportDialog.class);
-                startActivity(intent);
-            }
-        });*/
     }
 
     @Override

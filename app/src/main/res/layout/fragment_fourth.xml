@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color_WHITE"
     >
-    <TextView
-        android:textColor="#fff"
-        android:text="4"
-        android:layout_height="match_parent"
+    <LinearLayout
+        android:id="@+id/fourth_fragment_profile"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        />
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="@drawable/entire_border"
+        android:gravity="left"
+        >
+        <ImageView
+            android:id="@+id/fourth_fragment_profile_Item_Image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="2"
+            app:srcCompat="@drawable/fourth_fragment_profile_item_image" />
+        <LinearLayout
+            android:id="@+id/fourth_fragment_profile_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hong Gil Dong"
+                android:textColor="@color/color_Black"
+                />
+            <TextView
+                android:textSize="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wnsgml972@naver.com"
+                android:textColor="@color/color_Gray"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/fourth_fragment_location"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fourth_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+
+
+
 </LinearLayout>

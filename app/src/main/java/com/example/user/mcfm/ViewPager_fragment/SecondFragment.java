@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.user.mcfm.Adapter.Second_RecyclerView_Adapter;
+import com.example.user.mcfm.Adapter_Item.ChatActivity_RecyclerView_Item;
 import com.example.user.mcfm.Adapter_Item.Second_RecyclerView_Item;
 import com.example.user.mcfm.Interface.TestCallback;
 import com.example.user.mcfm.R;
@@ -28,13 +29,14 @@ import java.util.List;
  * Created by Choiwongyun on 2017-08-20.
  */
 
-public class SecondFragment extends Fragment implements View.OnClickListener,TestCallback{
+public class SecondFragment extends Fragment implements View.OnClickListener{
     private Second_RecyclerView_Adapter second_recyclerView_adapter;
     private List<Second_RecyclerView_Item> second_recyclerView_items;
     private RecyclerView second_RecyclerView;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); //firebase 접속
     private DatabaseReference databaseReference = firebaseDatabase.getReference();  //firebase json tree 접근
     private DatabaseReference chat = firebaseDatabase.getReference("chat");
+    private DatabaseReference chatRoom = firebaseDatabase.getReference("ChatRoom");
 
     @Nullable
     @Override
@@ -55,11 +57,24 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
+       /* chatRoom.child(second_recyclerView_items.get(posi)).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                chatRoom.
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+*/
     }
     private void setRecyclerView(){
         second_recyclerView_items = new ArrayList<Second_RecyclerView_Item>();
 
-        second_recyclerView_adapter = new Second_RecyclerView_Adapter(getContext(),second_recyclerView_items);
+        second_recyclerView_adapter = new Second_RecyclerView_Adapter(getContext(),second_recyclerView_items,testCallback);
         second_RecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         second_RecyclerView.setAdapter(second_recyclerView_adapter);
     }
@@ -69,19 +84,26 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
 
 
     }
+    private TestCallback testCallback = new TestCallback() {
+        @Override
+        public void test(ChatActivity_RecyclerView_Item item, int position) {
+            second_recyclerView_items.get(position).setLast_content(item.getChat_content());
+            second_recyclerView_items.get(position).setTime(item.getTime());
+            Log.e("time",item.getTime());
+            second_recyclerView_adapter.notifyDataSetChanged();
+        }
 
-    @Override
-    public void test(String a) {
 
-    }
+
+    };
+
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if(intent.getAction().equals("asd")){
                 String getName = intent.getStringExtra("name");
                 Log.e("잘옴!",getName);
-
-                second_recyclerView_items.add(new Second_RecyclerView_Item(getName,getName));
+                second_recyclerView_items.add(new Second_RecyclerView_Item(getName,"",""));
                 second_recyclerView_adapter.notifyDataSetChanged();
             }
         }

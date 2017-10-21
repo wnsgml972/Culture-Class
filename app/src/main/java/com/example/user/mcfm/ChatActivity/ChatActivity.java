@@ -9,7 +9,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -25,26 +24,29 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Choiwongyun on 2017-10-07.
  */
 
-public class ChatActivity extends AppCompatActivity implements View.OnClickListener{
+public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editText;
     private TextView chat_activity_setName;
     private ImageView chat_activity_back;
-    private Button button ;
+    private Button button;
     private String getName;
     private RecyclerView chatActivity_recyclerView;
     private ChatActivity_RecyclerView_Adapter chatActivity_recyclerView_adapter;
     private List<ChatActivity_RecyclerView_Item> chatActivity_recyclerView_items;
 
+
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); //firebase 접속
+    private DatabaseReference ChatRoomReference = firebaseDatabase.getReference("ChatRoom");
     private DatabaseReference databaseReference = firebaseDatabase.getReference();  //firebase json tree 접근
     private DatabaseReference chat = firebaseDatabase.getReference("chat");
 
@@ -60,11 +62,16 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn:
-                ChatActivity_RecyclerView_Item item = new ChatActivity_RecyclerView_Item(getName,editText.getText().toString());
+                long now  = System.currentTimeMillis();
+                Date date = new Date(now);
+                SimpleDateFormat setformat = new SimpleDateFormat("HH:mm");
+                String time  = setformat.format(date);
+                ChatActivity_RecyclerView_Item item = new ChatActivity_RecyclerView_Item(getName, editText.getText().toString(),time);
                 databaseReference.child("chat").child(getName).push().setValue(item);
                 editText.setText("");
+                ChatRoomReference.child(getName).setValue(item);
                 break;
         }
     }
@@ -76,34 +83,23 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 this.finish();
         }
         return true;
-
-
     }
-    private void init(){
+
+    private void init() {
         chatActivity_recyclerView_items = new ArrayList<ChatActivity_RecyclerView_Item>();
-        chatActivity_recyclerView  = (RecyclerView)findViewById(R.id.chat_activity_RecyclerView);
-        chatActivity_recyclerView_adapter = new ChatActivity_RecyclerView_Adapter(getApplicationContext(),chatActivity_recyclerView_items);
-        chatActivity_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+        chatActivity_recyclerView = (RecyclerView) findViewById(R.id.chat_activity_RecyclerView);
+        chatActivity_recyclerView_adapter = new ChatActivity_RecyclerView_Adapter(getApplicationContext(), chatActivity_recyclerView_items);
+        //chatActivity_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
+        linearLayoutManager.setStackFromEnd(true);
+        chatActivity_recyclerView.setLayoutManager(linearLayoutManager);
         chatActivity_recyclerView.setAdapter(chatActivity_recyclerView_adapter);
 
-        editText = (EditText)findViewById(R.id.editText);
-        button = (Button)findViewById(R.id.btn);
-        button.setOnClickListener((View.OnClickListener) this);
-        //Log.e("asd",databaseReference.);
-        chat.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    Log.e("asd",snapshot.child("chat").getChildren().iterator().toString());
-                }
-            }
+        chatActivity_recyclerView.scrollToPosition(chatActivity_recyclerView_adapter.getItemCount()-1);
 
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+        editText = (EditText) findViewById(R.id.editText);
+        button = (Button) findViewById(R.id.btn);
+        button.setOnClickListener(this);
 
         databaseReference.child("chat").child(getName).addChildEventListener(new ChildEventListener() {
             @Override
@@ -134,7 +130,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-
 
 
     private void InitStatusbar_and_Actionbar() {

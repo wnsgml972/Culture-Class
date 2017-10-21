@@ -7,10 +7,12 @@ package com.example.user.mcfm.Adapter_Item;
 public class Second_RecyclerView_Item {
     private String name;
     private String last_content;
+    private String time;
 
-    public Second_RecyclerView_Item( String name, String place) {
+    public Second_RecyclerView_Item(String name, String last_content, String time) {
         this.name = name;
-        this.last_content = place;
+        this.last_content = last_content;
+        this.time = time;
     }
 
     public String getName() {
@@ -21,11 +23,19 @@ public class Second_RecyclerView_Item {
         this.name = name;
     }
 
-    public String getPlace() {
+    public String getLast_content() {
         return last_content;
     }
 
-    public void setPlace(String place) {
-        this.last_content = place;
+    public void setLast_content(String last_content) {
+        this.last_content = last_content;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

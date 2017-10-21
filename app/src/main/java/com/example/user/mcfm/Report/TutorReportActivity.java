@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.user.mcfm.Dialog.ReportSubmitDialog;
+
 import com.example.user.mcfm.R;
 
 import java.io.FileNotFoundException;
@@ -45,8 +45,8 @@ public class TutorReportActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent = new Intent(getApplicationContext(), ReportSubmitDialog.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(getApplicationContext(), ReportSubmitDialog.class);
+        startActivity(intent);*/
         /*switch (item.getItemId()) {
             case R.id.quick_action1:
                 //

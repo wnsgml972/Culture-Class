@@ -11,8 +11,10 @@ import android.support.v7.app.NotificationCompat;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Util.Contact;
 
 /**
  * Created by User on 2017-10-11.
@@ -41,23 +43,30 @@ public class First_Recycler_Item_Click_confirm_Dialog extends AppCompatActivity 
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.confirm_Matching:
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
-                        builder.setSmallIcon(R.drawable.logo);
-                        builder.setContentTitle("매칭 성공");
-                        builder.setContentText("상대방이 매칭에 수락했습니다.");
+                if(!Contact.mento_list.contains(getName)) {
 
-                        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-                        notificationManager.notify(1,builder.build());
-                        Intent intent = new Intent("asd");
-                        intent.putExtra("name",getName);
-                        sendBroadcast(intent);
-                    }
-                },2000);
-                finish();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
+                            builder.setSmallIcon(R.drawable.logo);
+                            builder.setContentTitle("매칭 성공");
+                            builder.setContentText("상대방이 매칭에 수락했습니다.");
+                            Contact.mento_list.add(getName);
+                            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                            notificationManager.notify(1, builder.build());
+                            Intent intent = new Intent("asd");
+                            intent.putExtra("name", getName);
+                            sendBroadcast(intent);
+                        }
+                    }, 2000);
+                    finish();
+                }else {
+                    finish();
+                    Toast.makeText(this,"이미 매칭된 상대입니다.",Toast.LENGTH_SHORT).show();
+
+                }
                 break;
             case R.id.confirm_Cancel:
                 finish();

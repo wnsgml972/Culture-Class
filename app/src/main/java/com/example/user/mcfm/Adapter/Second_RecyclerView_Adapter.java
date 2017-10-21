@@ -10,9 +10,16 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.user.mcfm.Adapter_Item.ChatActivity_RecyclerView_Item;
 import com.example.user.mcfm.Adapter_Item.Second_RecyclerView_Item;
 import com.example.user.mcfm.ChatActivity.ChatActivity;
+import com.example.user.mcfm.Interface.TestCallback;
 import com.example.user.mcfm.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -22,12 +29,19 @@ import java.util.List;
 
 public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_RecyclerView_Adapter.ViewHolder> {
     private Context context;
+    private TestCallback testCallback;
     private List<Second_RecyclerView_Item> second_recyclerView_items;
     private RecyclerView second_RecyclerView;
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance(); //firebase 접속
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();  //firebase json tree 접근
+    private DatabaseReference chat = firebaseDatabase.getReference("chat");
+    private DatabaseReference chatRoom = firebaseDatabase.getReference("ChatRoom");
+    private Second_RecyclerView_Adapter second_recyclerView_adapter = this;
 
-    public Second_RecyclerView_Adapter(Context context, List<Second_RecyclerView_Item> second_recyclerView_items) {
+    public Second_RecyclerView_Adapter(Context context, List<Second_RecyclerView_Item> second_recyclerView_items, TestCallback testCallback) {
         this.context = context;
         this.second_recyclerView_items = second_recyclerView_items;
+        this.testCallback = testCallback;
     }
 
     @Override
@@ -37,9 +51,27 @@ public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_Rec
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.name.setText(second_recyclerView_items.get(position).getName());
-        holder.content.setText(second_recyclerView_items.get(position).getPlace());
+        holder.content.setText(second_recyclerView_items.get(position).getLast_content());
+        holder.time.setText(second_recyclerView_items.get(position).getTime());
+        chatRoom.child(second_recyclerView_items.get(position).getName()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    Log.e("asd어탭터 성공 ㅋ", "---------");
+                    ChatActivity_RecyclerView_Item chatActivity_recyclerView_item = dataSnapshot.getValue(ChatActivity_RecyclerView_Item.class);
+                    testCallback.test(chatActivity_recyclerView_item, position);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -56,9 +88,9 @@ public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_Rec
         public ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.second_RecyclerView_Item_Name);
-            content =  itemView.findViewById(R.id.second_RecyclerView_Item_Content);
-            time =  itemView.findViewById(R.id.second_RecyclerView_Item_Time);
-            linearLayout =  itemView.findViewById(R.id.second_RecyclerView_item_setClick);
+            content = itemView.findViewById(R.id.second_RecyclerView_Item_Content);
+            time = itemView.findViewById(R.id.second_RecyclerView_Item_Time);
+            linearLayout = itemView.findViewById(R.id.second_RecyclerView_item_setClick);
             linearLayout.setOnClickListener(this);
         }
 

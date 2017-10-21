@@ -7,13 +7,22 @@ package com.example.user.mcfm.Adapter_Item;
 public class ChatActivity_RecyclerView_Item {
     private String chat_name;
     private String chat_content;
-
+    private String time;
     public ChatActivity_RecyclerView_Item() {
     }
 
-    public ChatActivity_RecyclerView_Item(String chat_name, String chat_content) {
+    public ChatActivity_RecyclerView_Item(String chat_name, String chat_content,String time) {
         this.chat_name = chat_name;
         this.chat_content = chat_content;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getChat_name() {

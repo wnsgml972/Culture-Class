@@ -55,23 +55,25 @@ public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_Rec
 
         public ViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.second_RecyclerView_Item_Name);
-            content = (TextView) itemView.findViewById(R.id.second_RecyclerView_Item_Content);
-            time = (TextView) itemView.findViewById(R.id.second_RecyclerView_Item_Time);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.second_RecyclerView_item_setClick);
+            name = itemView.findViewById(R.id.second_RecyclerView_Item_Name);
+            content =  itemView.findViewById(R.id.second_RecyclerView_Item_Content);
+            time =  itemView.findViewById(R.id.second_RecyclerView_Item_Time);
+            linearLayout =  itemView.findViewById(R.id.second_RecyclerView_item_setClick);
             linearLayout.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()){
+            switch (view.getId()) {
                 case R.id.second_RecyclerView_item_setClick:
-                    int position = getAdapterPosition();
-                    Intent intent = new Intent(view.getContext(), ChatActivity.class);
-                    intent.putExtra("name",second_recyclerView_items.get(position).getName());
-                    Log.e("second_fragment_name",second_recyclerView_items.get(position).getName());
-                    view.getContext().startActivity(intent);
-                    break;
+                    if (getAdapterPosition() != RecyclerView.NO_POSITION) {
+                        int position = getAdapterPosition();
+                        Intent intent = new Intent(view.getContext(), ChatActivity.class);
+                        intent.putExtra("name", second_recyclerView_items.get(position).getName());
+                        Log.e("second_fragment_name", second_recyclerView_items.get(position).getName());
+                        view.getContext().startActivity(intent);
+                        break;
+                    }
             }
         }
     }

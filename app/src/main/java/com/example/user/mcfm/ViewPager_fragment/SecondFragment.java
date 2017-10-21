@@ -43,6 +43,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
         second_RecyclerView = (RecyclerView)view.findViewById(R.id.second_RecyclerView);
         setRecyclerView();
 
+
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("asd");
         getActivity().registerReceiver(broadcastReceiver, intentFilter);

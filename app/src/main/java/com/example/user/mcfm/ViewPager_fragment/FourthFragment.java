@@ -28,8 +28,6 @@ import java.util.List;
 
 public class FourthFragment extends Fragment {
 
-/*    private ImageView fourth_Myprofile_Image;
-    private TextView fourth_Myprofile_Name;*/
     private RecyclerView fourth_RecyclerView;
     private Fourth_RecyclerView_Adapter fourth_recyclerView_adapter;
     private List<Fourth_RecyclerView_Item> fourth_recyclerView_items;
@@ -55,7 +53,6 @@ public class FourthFragment extends Fragment {
 
     private void setRecyclerView(){
         fourth_recyclerView_items = new ArrayList<Fourth_RecyclerView_Item>();
-
 
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("공지사항",R.drawable.fourth_item_speaker));
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("튜티 정보",R.drawable.fourth_item_tuty));

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_Main"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:gravity="center_horizontal"
+    >
+    <ImageButton
+        android:id="@+id/fourth_i_dialog_exit_btn"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:background="@drawable/x_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        />
+
+    <TextView
+        android:text="한성대학교 컴퓨터공학부"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textColor="@color/color_Black"
+        android:text="Copyright"
+        android:textSize="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/color_Gray"
+        android:layout_marginTop="10dp"
+        android:text="Choi Won Gyun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/color_Gray"
+        android:text="Baek Seung Hwan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/color_Gray"
+        android:text="Sim Hyeon Yong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/color_Gray"
+        android:text="Hong Seong Mun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/color_Gray"
+        android:text="Kim Jun Hee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/color_Gray"
+        android:text="Lee Yoon Jae"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Call FeedBack 010-1234-1235"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

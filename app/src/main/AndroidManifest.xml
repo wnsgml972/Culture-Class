@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".Main.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             >
@@ -23,6 +24,18 @@
             android:parentActivityName=".Main.MainActivity"
             />
         <activity android:name=".Dialog.First_Recycler_Item_Click_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            />
+        <activity android:name=".Dialog.Fourth_Recycler_Item_Developer_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            />
+        <activity android:name=".Dialog.Fourth_Recycler_Item_I_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            />
+        <activity android:name=".Dialog.Fourth_Recycler_Item_QNA_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            />
+        <activity android:name=".Dialog.Fourth_Recycler_Item_Speaker_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog"
             />
         <activity android:name=".Dialog.First_Recycler_Item_Click_confirm_Dialog"

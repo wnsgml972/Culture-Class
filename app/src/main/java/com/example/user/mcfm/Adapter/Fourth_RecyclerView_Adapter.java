@@ -14,6 +14,10 @@ import android.widget.Toast;
 
 import com.example.user.mcfm.Adapter_Item.Fourth_RecyclerView_Item;
 
+import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_Developer_Dialog;
+import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_I_Dialog;
+import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_QNA_Dialog;
+import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_Speaker_Dialog;
 import com.example.user.mcfm.R;
 
 import java.util.List;
@@ -65,7 +69,29 @@ public class Fourth_RecyclerView_Adapter extends RecyclerView.Adapter<Fourth_Rec
             switch (view.getId()){
                 case R.id.fourth_RecyclerView_item_setClick:
                     int position = getAdapterPosition();    //viewHolder 안에 onclick 을 달아줘야 각 position 에 접근가능
-                    Log.i("kkk", Integer.toString(position));
+                    Intent intent = null;
+                    switch (position){
+                        case 0:
+                            intent = new Intent(view.getContext(), Fourth_Recycler_Item_Speaker_Dialog.class);
+                            break;
+                        case 1:
+                            intent = new Intent(view.getContext(), Fourth_Recycler_Item_I_Dialog.class);
+                            break;
+                        case 2:
+                            intent = new Intent(view.getContext(), Fourth_Recycler_Item_I_Dialog.class);
+                            break;
+                        case 3:
+                            intent = new Intent(view.getContext(), Fourth_Recycler_Item_I_Dialog.class);
+                            break;
+                        case 4:
+                            intent = new Intent(view.getContext(), Fourth_Recycler_Item_QNA_Dialog.class);
+                            break;
+                        case 5:
+                            intent = new Intent(view.getContext(), Fourth_Recycler_Item_Developer_Dialog.class);
+                            break;
+                    }
+                    intent.putExtra("name",forth_recyclerView_items.get(position).getName());
+                    view.getContext().startActivity(intent);
                     break;
             }
         }

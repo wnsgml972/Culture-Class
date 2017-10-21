@@ -30,7 +30,10 @@
         <activity
             android:name=".Dialog.First_Recycler_Item_Click_confirm_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog" />
-        <activity android:name=".Dialog.ReportSubmitDialog"></activity>
+        <activity
+            android:name=".Dialog.ReportSubmitDialog"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".Report.TutorReportActivity"></activity>
     </application>
 
 </manifest>

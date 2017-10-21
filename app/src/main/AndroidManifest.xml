@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.mcfm">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -9,24 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main.MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            >
+        <activity
+            android:name=".Main.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChatActivity.ChatActivity"
-            android:windowSoftInputMode="adjustUnspecified"
+        <activity
+            android:name=".ChatActivity.ChatActivity"
             android:parentActivityName=".Main.MainActivity"
-            />
-        <activity android:name=".Dialog.First_Recycler_Item_Click_Dialog"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            />
-        <activity android:name=".Dialog.First_Recycler_Item_Click_confirm_Dialog"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            />
+            android:windowSoftInputMode="adjustUnspecified" />
+        <activity
+            android:name=".Dialog.First_Recycler_Item_Click_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".Dialog.First_Recycler_Item_Click_confirm_Dialog"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".Dialog.ReportSubmitDialog"></activity>
     </application>
+
 </manifest>

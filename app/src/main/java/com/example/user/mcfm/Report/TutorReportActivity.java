@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,8 +57,8 @@ public class TutorReportActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);   //타이틀바 없애는코드
         setContentView(R.layout.activity_tutor_report);
-
         Calendar calendar = Calendar.getInstance();
         String timestr = calendar.getTime().toString();
 
@@ -73,7 +76,16 @@ public class TutorReportActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQEUST_OK);
             }
         });
-
+        initStatusbar();
+    }
+    private void initStatusbar(){
+        View view = getWindow().getDecorView();
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            if(view!=null){
+                view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                getWindow().setStatusBarColor(Color.parseColor("#ffc0cb"));
+            }
+        }else getWindow().setStatusBarColor(Color.parseColor("#000"));
     }
 
     @Override

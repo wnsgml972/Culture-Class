@@ -33,16 +33,16 @@ import java.util.Locale;
 
 public class TutorReportActivity extends AppCompatActivity {
 
-    TextView date_text;
-    ImageView imageView;
+    private TextView date_text;
+    private ImageView imageView;
     int REQEUST_OK = 101;
-    FloatingActionButton submit;
-    ImageButton exitbtn;
-    EditText week;
-    EditText tutor;
-    EditText group;
-    EditText tutee;
-    EditText active;
+    private FloatingActionButton submit;
+    private ImageButton exitbtn;
+    private EditText week;
+    private EditText tutor;
+    private EditText group;
+    private EditText tutee;
+    private EditText active;
 
 
     @Override

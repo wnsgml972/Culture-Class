@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity{
         tabLayout = (TabLayout)findViewById(R.id.tab);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_chat));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_calendar));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_settings_work_tool));
         viewPager.setOffscreenPageLimit(4);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener(){

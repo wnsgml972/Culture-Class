@@ -145,6 +145,7 @@ public class TutorReportActivity extends AppCompatActivity {
                     Bitmap image_bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                     imageView.setImageBitmap(image_bitmap);
 
+
                 }catch(FileNotFoundException e) { e.printStackTrace(); } catch (IOException e) {
                     e.printStackTrace();
                 }

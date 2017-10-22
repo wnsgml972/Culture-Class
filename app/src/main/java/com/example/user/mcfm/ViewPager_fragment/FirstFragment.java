@@ -46,9 +46,6 @@ public class FirstFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //first_Myprofile_Image.setImageResource(R.drawable.logo);
-
-
     }
 
     private void setRecyclerView(){

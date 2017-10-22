@@ -46,6 +46,9 @@
         <activity android:name=".Dialog.Fourth_Recycler_Item_Developer_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog"
             />
+        <activity android:name=".Dialog.SubmitReportDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            />
 
     </application>
 </manifest>

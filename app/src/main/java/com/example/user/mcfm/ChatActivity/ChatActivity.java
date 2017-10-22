@@ -68,7 +68,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 Date date = new Date(now);
                 SimpleDateFormat setformat = new SimpleDateFormat("HH:mm");
                 String time  = setformat.format(date);
-                ChatActivity_RecyclerView_Item item = new ChatActivity_RecyclerView_Item(getName, editText.getText().toString(),time);
+                ChatActivity_RecyclerView_Item item = new ChatActivity_RecyclerView_Item(getName, editText.getText().toString(),time,1);
                 databaseReference.child("chat").child(getName).push().setValue(item);
                 editText.setText("");
                 ChatRoomReference.child(getName).setValue(item);

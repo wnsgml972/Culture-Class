@@ -55,6 +55,7 @@ public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_Rec
         holder.name.setText(second_recyclerView_items.get(position).getName());
         holder.content.setText(second_recyclerView_items.get(position).getLast_content());
         holder.time.setText(second_recyclerView_items.get(position).getTime());
+
         chatRoom.child(second_recyclerView_items.get(position).getName()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

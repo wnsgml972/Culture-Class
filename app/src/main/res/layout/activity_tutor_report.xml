@@ -6,35 +6,30 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+
     <LinearLayout
-        android:padding="10dp"
-        android:background="@color/color_Main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+        android:background="@color/color_Main"
+        android:padding="10dp">
+
         <TextView
-            android:textColor="@color/color_Black"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:textSize="20dp"
-            android:layout_gravity="center"
-            android:text="보고서 작성"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:id="@+id/report_submit_btn"
-            android:layout_margin="5dp"
-            android:background="@drawable/airplain"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="보고서 작성"
+            android:textColor="@color/color_Black"
+            android:textSize="20dp" />
+
+
         <ImageButton
             android:id="@+id/report_exit_btn"
-            android:layout_margin="5dp"
-            android:background="@drawable/x_btn"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            />
+            android:layout_margin="5dp"
+            android:background="@drawable/x_btn" />
     </LinearLayout>
 
     <LinearLayout
@@ -68,7 +63,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    android:src="@drawable/fourth_fragment_profile_item_image"/>
 
             </LinearLayout>
 
@@ -120,27 +115,26 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="주차:" />
 
             <EditText
+                android:id="@+id/week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/writer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="튜터:" />
 
             <EditText
-                android:id="@+id/writer_edit"
+                android:id="@+id/tutor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -154,28 +148,26 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="소속:" />
 
             <EditText
-                android:id="@+id/group_edit"
+                android:id="@+id/group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/tutee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="튜티:" />
 
             <EditText
-                android:id="@+id/tutor_edit"
+                android:id="@+id/tutee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -189,7 +181,6 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/active"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -202,12 +193,26 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/active_p"
+                android:id="@+id/active"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_weight="1.5"
                 android:inputType="textMultiLine" />
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                app:backgroundTint="@color/color_Main"
+                app:srcCompat="@drawable/airplain" />
+        </RelativeLayout>
 
 
     </LinearLayout>

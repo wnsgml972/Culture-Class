@@ -26,12 +26,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+
 /**
  * Created by Choiwongyun on 2017-08-20.
  */
 
 public class FirstFragment extends Fragment {
-    private Context context;
     private ImageView first_Myprofile_Image;
     private TextView first_Myprofile_Name;
     private RecyclerView first_RecyclerView;
@@ -77,8 +78,7 @@ public class FirstFragment extends Fragment {
             if(intent.getAction().equals(Contact.SetProfilePhoto)){
                 String photo_intent = intent.getStringExtra("ph");
                 Log.e("photo-----",photo_intent);
-                Uri photo_uri = Uri.parse(photo_intent);
-                Picasso.with(getContext()).load(photo_uri).fit().into(first_Myprofile_Image);
+                Picasso.with(getContext()).load(Uri.parse(String.valueOf(photo_intent))).transform(new CropCircleTransformation()).into(first_Myprofile_Image);
             }
         }
     };

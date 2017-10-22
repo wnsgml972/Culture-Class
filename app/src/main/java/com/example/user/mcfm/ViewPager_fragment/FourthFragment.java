@@ -3,7 +3,6 @@ package com.example.user.mcfm.ViewPager_fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,10 +20,12 @@ import com.example.user.mcfm.Adapter.Fourth_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.Fourth_RecyclerView_Item;
 import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
+import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 /**
  * Created by Choiwongyun on 2017-08-20.
@@ -86,23 +87,21 @@ public class FourthFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQEUST_OK) {
             if (resultCode == Activity.RESULT_OK) {
-                //String picture_name = getImageNameToUri(data.getData());
+                Intent photo_intent = new Intent(Contact.SetProfilePhoto);
+                photo_intent.putExtra("ph", String.valueOf(data.getData()));
+                getContext().sendBroadcast(photo_intent);
 
-                    /*Bitmap image_bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
-                    fourth_fragment_profile_Item_Image.setImageBitmap(image_bitmap);*/
-                Bitmap photo = (Bitmap) data.getExtras().get("data");
-                try {
-                    Bitmap image_bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+                Picasso.with(getContext()).load(Uri.parse(String.valueOf(data.getData()))).transform(new CropCircleTransformation()).into(fourth_fragment_profile_Item_Image);
 
-                    Intent photo_intent = new Intent(Contact.SetProfilePhoto);
-                    photo_intent.putExtra("ph", getPath(data.getData()));
-                    getContext().sendBroadcast(photo_intent);
+                //Bitmap photo = (Bitmap) data.getExtras().get("data");
+                /*try {
+                   Bitmap image_bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+
 
                     fourth_fragment_profile_Item_Image.setImageBitmap(image_bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
-                }
-                //((ImageView)view.findViewById(R.id.fourth_fragment_profile_Item_Image)).setImageBitmap(image_bitmap);
+                }*/
 
             }
         }

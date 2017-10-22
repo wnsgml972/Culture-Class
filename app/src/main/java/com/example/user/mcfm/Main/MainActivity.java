@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity{
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.chat));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_settings_work_tool));
         viewPager.setOffscreenPageLimit(4);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener(){
 

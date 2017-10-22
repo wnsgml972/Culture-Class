@@ -16,9 +16,10 @@
         >
         <ImageView
             android:id="@+id/fourth_fragment_profile_Item_Image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="2"
             app:srcCompat="@drawable/fourth_fragment_profile_item_image" />
         <LinearLayout

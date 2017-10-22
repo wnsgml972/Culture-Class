@@ -84,6 +84,7 @@ public class TutorReportActivity extends AppCompatActivity {
         tutee = (EditText)findViewById(R.id.tutee);
         active = (EditText)findViewById(R.id.active);
 
+
         submit = (FloatingActionButton)findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

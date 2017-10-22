@@ -66,6 +66,7 @@ public class First_RecyclerView_Adapter extends RecyclerView.Adapter<First_Recyc
                     Log.e("position_item",first_recyclerView_items.get(position).getName()+first_recyclerView_items.get(position).getPlace());
                     Intent intent = new Intent(view.getContext(), First_Recycler_Item_Click_Dialog.class);
                     intent.putExtra("name",first_recyclerView_items.get(position).getName());
+                    intent.putExtra("place",first_recyclerView_items.get(position).getPlace());
                     view.getContext().startActivity(intent);
                     break;
             }

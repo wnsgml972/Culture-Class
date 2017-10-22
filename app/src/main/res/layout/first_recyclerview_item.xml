@@ -11,7 +11,9 @@
         android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:layout_weight="5"
-        app:srcCompat="@drawable/first_recycler_item_image" />
+        android:tint="@color/color_Main"
+        app:srcCompat="@drawable/ic_account_circle_black_40dp"
+        />
 
     <LinearLayout
         android:id="@+id/first_RecyclerView_item_setClick"

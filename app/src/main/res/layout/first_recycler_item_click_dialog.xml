@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:Tool="http://schemas.android.com/tools"
     android:background="@color/color_WHITE"
     android:orientation="vertical"
 
     android:layout_width="300dp"
     android:layout_height="400dp">
     <LinearLayout
-        android:layout_weight="3.5"
+        android:layout_weight="3.2"
         android:orientation="horizontal"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -20,8 +21,9 @@
             android:layout_width="match_parent"
             />
         <TextView
+            android:textStyle="bold"
             android:text="asdasd"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:gravity="center"
             android:textColor="@color/color_Black"
             android:layout_weight="2"
@@ -40,57 +42,66 @@
         <TextView
             android:layout_marginLeft="12dp"
             android:gravity="center|left"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textColor="@color/color_Black"
             android:text="희망 멘토링"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />
+
         <TextView
-            android:id="@+id/click_dialog_metoType"
+            android:id="@+id/click_dialog_mentoType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginRight="12dp"
-            android:gravity="center|left"
-            android:textSize="20sp"
-            android:textColor="@color/color_Black"
             android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            />
+            android:gravity="center|right"
+            android:textColor="@color/color_Gray"
+            android:textSize="12sp" />
+
         <TextView
-            android:text="지역"
-            android:layout_marginLeft="12dp"
-            android:gravity="center|left"
-            android:textSize="20sp"
-            android:textColor="@color/color_Black"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:text="지역"
+            android:textColor="@color/color_Black"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/click_dialog_place"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="12dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:textColor="@color/color_Gray"
+            android:textSize="12sp"
+            />
 
         <TextView
             android:text="소개"
             android:layout_marginLeft="12dp"
             android:gravity="center|left"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textColor="@color/color_Black"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />
+
         <TextView
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:textColor="@color/color_Gray"
             android:id="@+id/click_dialog_introduce"
-            android:layout_weight="0.8"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            />
+            android:layout_height="match_parent"
+            android:layout_weight="0.8" />
 
 
     </LinearLayout>

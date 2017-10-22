@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Util.Contact;
 
 /**
  * Created by User on 2017-10-11.
@@ -17,7 +18,8 @@ import com.example.user.mcfm.R;
 public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implements View.OnClickListener {
     private TextView name;
     private TextView ok, cancel;
-    private String getName;
+    private TextView mentoType,mentoplace,mentoIntroduce;
+    private String getName,getPlace;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +35,19 @@ public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implemen
         name = (TextView) findViewById(R.id.first_RecyclerView_item_Click_dialog_Name);
         ok = (TextView) findViewById(R.id.first_RecyclerView_item_Click_dialog_OK);
         cancel = (TextView) findViewById(R.id.first_RecyclerView_item_Click_dialog_CANCEL);
+        mentoType = (TextView)findViewById(R.id.click_dialog_mentoType);
+        mentoplace = (TextView)findViewById(R.id.click_dialog_place);
+        mentoIntroduce = (TextView)findViewById(R.id.click_dialog_introduce);
+
+        double randdomvalue = Math.random();
+        int intValue = (int)(randdomvalue*2)+1;
+        if(intValue ==1){
+            mentoType.setText(Contact.mento_Type_one);
+            mentoIntroduce.setText(Contact.mento_introduce_one);
+        }else{
+            mentoType.setText(Contact.mento_Type_two);
+            mentoIntroduce.setText(Contact.mento_introduce_two);
+        }
 
         ok.setOnClickListener(this);
         cancel.setOnClickListener(this);
@@ -40,6 +55,8 @@ public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implemen
         Intent intent = getIntent();
         getName = intent.getStringExtra("name");
         name.setText(getName);
+        getPlace = intent.getStringExtra("place");
+        mentoplace.setText(getPlace);
     }
 
     @Override

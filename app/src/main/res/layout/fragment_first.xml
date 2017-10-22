@@ -27,7 +27,8 @@
         <ImageView
             android:id="@+id/first_Myprofile_Image"
             android:layout_weight="5"
-            app:srcCompat="@drawable/chat"
+            android:tint="@color/color_Main"
+            app:srcCompat="@drawable/ic_account_circle_black_40dp"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />

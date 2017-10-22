@@ -24,6 +24,9 @@ public class Contact {
     public static int VIEWPAGER_MAX = 1000;
     public static int VIEWPAGER_CURRENT = 499;
 
+    public static String Matching = "matching";
+    public static String SetProfilePhoto= "profile_photo";
+
     public static String mento_Type_one="결혼 , 이민자 멘토링";
     public static String mento_Type_two="다문화 가정자녀 학습 멘토링";
 

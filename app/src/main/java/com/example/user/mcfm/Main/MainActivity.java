@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity{
         viewPager.setAdapter(pagerAdapter);
         tabLayout = (TabLayout)findViewById(R.id.tab);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.chat));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_chat));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_settings_work_tool));
         viewPager.setOffscreenPageLimit(4);

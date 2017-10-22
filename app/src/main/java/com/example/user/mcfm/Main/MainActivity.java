@@ -1,6 +1,7 @@
 package com.example.user.mcfm.Main;
 
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -88,11 +89,12 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
+                tab.getIcon().setColorFilter(getColor(R.color.color_Main), PorterDuff.Mode.SRC_IN);
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
+                tab.getIcon().setColorFilter(getColor(R.color.color_Black), PorterDuff.Mode.SRC_IN);
             }
 
             @Override

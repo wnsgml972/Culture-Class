@@ -42,7 +42,7 @@ public class ChatActivity_RecyclerView_Adapter extends RecyclerView.Adapter<Recy
 
     @Override
     public int getItemViewType(int position) {
-        if(list.get(position).getItemViewType() == 0){
+        if(list.get(position).getItemViewType() == VIEW_TYPE_YOU){
             return VIEW_TYPE_YOU;
         }else {
             return VIEW_TYPE_ME;
@@ -56,9 +56,9 @@ public class ChatActivity_RecyclerView_Adapter extends RecyclerView.Adapter<Recy
 
             return new ViewHolder_you(view);
         }else {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item_me,parent,false);
 
-            return new ViewHolder_you(view);
+            return new ViewHolder_me(view);
         }
     }
 

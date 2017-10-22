@@ -8,14 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.mcfm.Adapter_Item.First_RecyclerView_Item;
 import com.example.user.mcfm.Adapter_Item.Fourth_RecyclerView_Dialog_Tuty_Item;
 import com.example.user.mcfm.Dialog.First_Recycler_Item_Click_Dialog;
 import com.example.user.mcfm.R;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -26,9 +30,15 @@ public class Fourth_RecyclerView_Dialog_Tuty_Adapter extends RecyclerView.Adapte
     private Context context;
     private List<Fourth_RecyclerView_Dialog_Tuty_Item> fourth_recyclerView_dialog_tuty_items;
 
+    private static HashMap<String, String> tuty_data = new HashMap<String, String>();
+
     public Fourth_RecyclerView_Dialog_Tuty_Adapter(Context context, List<Fourth_RecyclerView_Dialog_Tuty_Item> fourth_recyclerView_dialog_tuty_items) {
         this.context = context;
         this.fourth_recyclerView_dialog_tuty_items = fourth_recyclerView_dialog_tuty_items;
+    }
+
+    public static HashMap<String, String> getHash(){
+        return tuty_data;
     }
 
     @Override
@@ -38,9 +48,16 @@ public class Fourth_RecyclerView_Dialog_Tuty_Adapter extends RecyclerView.Adapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.position.setText(fourth_recyclerView_dialog_tuty_items.get(position).getLocation());
         holder.check.setChecked(fourth_recyclerView_dialog_tuty_items.get(position).getCheck());
+
+        holder.check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                tuty_data.put(Integer.toString(position), Boolean.toString(isChecked));
+            }
+        });
     }
 
     @Override
@@ -48,7 +65,7 @@ public class Fourth_RecyclerView_Dialog_Tuty_Adapter extends RecyclerView.Adapte
         return fourth_recyclerView_dialog_tuty_items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView position;
         public CheckBox check;
         public LinearLayout linearLayout;

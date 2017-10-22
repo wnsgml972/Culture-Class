@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -68,11 +69,9 @@ public class MainActivity extends AppCompatActivity{
                         break;
                     case 1:
                         main_activity_setTitle.setText("채팅");
-
                         break;
                     case 2:
                         main_activity_setTitle.setText("달력");
-
                         break;
                     case 3:
                         main_activity_setTitle.setText("설정");

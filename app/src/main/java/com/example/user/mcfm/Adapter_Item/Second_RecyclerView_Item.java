@@ -6,11 +6,11 @@ package com.example.user.mcfm.Adapter_Item;
 
 public class Second_RecyclerView_Item {
     private String name;
-    private String place;
+    private String last_content;
 
     public Second_RecyclerView_Item( String name, String place) {
         this.name = name;
-        this.place = place;
+        this.last_content = place;
     }
 
     public String getName() {
@@ -22,10 +22,10 @@ public class Second_RecyclerView_Item {
     }
 
     public String getPlace() {
-        return place;
+        return last_content;
     }
 
     public void setPlace(String place) {
-        this.place = place;
+        this.last_content = place;
     }
 }

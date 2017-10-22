@@ -58,9 +58,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener,Tes
     }
     private void setRecyclerView(){
         second_recyclerView_items = new ArrayList<Second_RecyclerView_Item>();
-        /*second_recyclerView_items.add(new Second_RecyclerView_Item("홍길동","성북구"));
-        second_recyclerView_items.add(new Second_RecyclerView_Item("황진이","성동구"));
-        second_recyclerView_items.add(new Second_RecyclerView_Item("어우동","도봉구"));*/
 
         second_recyclerView_adapter = new Second_RecyclerView_Adapter(getContext(),second_recyclerView_items);
         second_RecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));

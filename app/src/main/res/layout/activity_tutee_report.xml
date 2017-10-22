@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,40 +39,22 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="30dp"
         android:orientation="vertical"
-        tools:context="org.androidtown.myreportdemo.TutorReportActivity">
+        android:paddingBottom="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/picture"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="활동사진" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/fourth_fragment_profile_item_image"/>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingTop="40dp"
-                android:paddingLeft="10dp">
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -96,7 +78,7 @@
                         android:id="@+id/date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="5"
                         android:text="작성일:" />
 
                     <TextView
@@ -107,103 +89,146 @@
                         android:inputType="textPersonName" />
 
                 </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
-            <TextView
+
+
+            <!--<TextView
+                android:id="@+id/week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:text="주차:" />
 
             <EditText
-                android:id="@+id/week"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName" />-->
 
-            <TextView
+
+            <!--<TextView
+                android:id="@+id/writer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:text="튜터:" />
 
             <EditText
-                android:id="@+id/tutor"
+                android:id="@+id/writer_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:inputType="textPersonName" />
+                android:layout_weight="1"
+                android:inputType="textPersonName" />-->
+
+            <!--<CheckBox
+                android:id="@+id/tutor1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="홍길동"
+                app:buttonTint="@color/color_Main" />
+
+            <CheckBox
+                android:id="@+id/tutor2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="홍성문"
+                app:buttonTint="@color/color_Main" />-->
+
+            <Spinner
+                android:id="@+id/spinner_tutor_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="소속:" />
-
-            <EditText
-                android:id="@+id/group"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:inputType="textPersonName" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="튜티:" />
-
-            <EditText
+                android:layout_marginLeft="6.5dp"
                 android:id="@+id/tutee"
+                android:textSize="16dp"
+                android:textColor="@color/color_Black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="5"
+                android:text="작성자:" />
+
+            <TextView
+                android:id="@+id/tutor_edit"
+                android:textSize="16dp"
+                android:textColor="@color/color_Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="홍길동"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
             <TextView
+                android:id="@+id/active"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="활동내용" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+           <!-- <EditText
+                android:id="@+id/active_p"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="1.5"
+                android:inputType="textMultiLine" />-->
+
+            <TextView
+                android:layout_marginLeft="6.5dp"
+                android:textColor="@color/color_Black"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="느낀점" />
 
             <EditText
-                android:id="@+id/active"
-                android:layout_width="0dp"
-                android:layout_height="150dp"
-                android:layout_weight="1.5"
+                android:id="@+id/review"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:inputType="textMultiLine" />
+
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/submit"
                 android:layout_width="wrap_content"
@@ -211,10 +236,10 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 app:backgroundTint="@color/color_Main"
-                app:srcCompat="@drawable/airplain" />
+                app:srcCompat="@drawable/airplain"/>
         </RelativeLayout>
 
-
     </LinearLayout>
+
 
 </LinearLayout>

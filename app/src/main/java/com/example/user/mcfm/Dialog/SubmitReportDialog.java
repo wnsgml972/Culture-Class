@@ -2,7 +2,6 @@ package com.example.user.mcfm.Dialog;
 
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,11 +11,14 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Report.TutorReportActivity;
 
 public class SubmitReportDialog extends AppCompatActivity implements View.OnClickListener{
 
     private TextView yes;
     private TextView no;
+    public static boolean submit_check = false;
+    private TutorReportActivity tutorReportActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +46,11 @@ public class SubmitReportDialog extends AppCompatActivity implements View.OnClic
                         builder.setSmallIcon(R.drawable.chopaa);
                         builder.setContentTitle("전송 성공");
                         builder.setContentText("전송이 성공적으로 되었습니다.");
-
                         NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
                         notificationManager.notify(1,builder.build());
-                        Intent intent = new Intent("asd");
-                        sendBroadcast(intent);
                     }
                 },2000);
+                submit_check = true;
                 finish();
                 break;
             case R.id.no:

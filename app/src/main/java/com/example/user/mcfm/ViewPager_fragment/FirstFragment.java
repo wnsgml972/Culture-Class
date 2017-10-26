@@ -23,6 +23,7 @@ import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,8 +78,8 @@ public class FirstFragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             if(intent.getAction().equals(Contact.SetProfilePhoto)){
                 String photo_intent = intent.getStringExtra("ph");
-                Log.e("photo-----",photo_intent);
-                Picasso.with(getContext()).load(Uri.parse(String.valueOf(photo_intent))).transform(new CropCircleTransformation()).into(first_Myprofile_Image);
+                Log.e("FIRST_FRAGMENT_DATA",photo_intent);
+                Picasso.with(getContext()).load(Uri.fromFile(new File(photo_intent))).transform(new CropCircleTransformation()).into(first_Myprofile_Image);
             }
         }
     };

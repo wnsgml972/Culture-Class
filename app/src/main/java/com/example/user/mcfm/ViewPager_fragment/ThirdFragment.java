@@ -12,8 +12,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,11 +22,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.user.mcfm.R;
 import com.example.user.mcfm.Adapter.MonthlyPagerAdapter;
-import com.example.user.mcfm.Util.Contact;
-import com.example.user.mcfm.Adapter.WriteRecyAdapter;
 import com.example.user.mcfm.DB.DBManager;
+import com.example.user.mcfm.Dialog.Calender_dialog;
+import com.example.user.mcfm.R;
+import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -52,9 +51,6 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
     private LinearLayout write_list_layout;
     private TextView write_calendar_text;
     private ImageView write_add_btn;
-    private RecyclerView write_recycleview;
-    private WriteRecyAdapter writeRecyAdapter;
-    private RecyclerView.LayoutManager R_layoutManager;
 
     private int Year;
     private int Month;
@@ -97,7 +93,6 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
         write_add_btn = (ImageView) view.findViewById(R.id.write_add_btn);
         null_calendar_text = (TextView) view.findViewById(R.id.null_calendar_text);
 
-        write_recycleview = (RecyclerView) view.findViewById(R.id.write_recycleview);
 
         Picasso.with(getContext()).load(R.drawable.close_image).fit().into(close_image);
         Picasso.with(getContext()).load(R.drawable.write_add_image).fit().into(write_add_btn);
@@ -134,6 +129,11 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
                 WriteListSetVisible(0);
                 break;
             case R.id.write_add_btn:
+                Intent intent = new Intent(getContext(), Calender_dialog.class);
+                intent.putExtra("title",Year + "." + Month + "." + Day + " " + getDayOfWeek(DAY_OF_WEEK));
+                intent.putExtra("DB_NAME", String.valueOf(Year) + String.valueOf(Month) + String.valueOf(Day));
+
+                getContext().startActivity(intent);
                 WriteListSetVisible(0);
                 break;
         }
@@ -225,7 +225,7 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
             dbManager = new DBManager(getContext(), "Write", null, 1);
             redadb = dbManager.getReadableDatabase();
             String table_name = String.valueOf(Year) + String.valueOf(Month) + String.valueOf(Day);
-
+            Log.e("THIRD_FRAGMENT_ASYNCTASK",table_name);   //테이블 이름
             calendar = Calendar.getInstance();
             calendar.set(Calendar.YEAR, Year);
             calendar.set(Calendar.MONTH, Month - 1);
@@ -255,17 +255,10 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
         protected void onPostExecute(Object o) {
             super.onPostExecute(o);
             if (starttime.size() > 0) {
-                write_recycleview.setVisibility(View.VISIBLE);
                 null_calendar_text.setVisibility(View.GONE);
             } else {
-                write_recycleview.setVisibility(View.GONE);
                 null_calendar_text.setVisibility(View.VISIBLE);
             }
-            write_recycleview.setHasFixedSize(true);
-            R_layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-            write_recycleview.setLayoutManager(R_layoutManager);
-            writeRecyAdapter = new WriteRecyAdapter(getContext(), starttime, endtime, title, jsonarray, calendar); //값이 있을때
-            write_recycleview.setAdapter(writeRecyAdapter);
         }
     }
 }

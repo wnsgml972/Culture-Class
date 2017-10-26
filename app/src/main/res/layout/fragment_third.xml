@@ -75,16 +75,6 @@
                 android:text="일정이 없습니다"
                 android:textColor="#aaaaaa"
                 android:textSize="15sp" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/write_recycleview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="5dp"
-                android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

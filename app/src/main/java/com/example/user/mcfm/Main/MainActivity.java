@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.user.mcfm.R;
 import com.example.user.mcfm.ViewPager_fragment.FirstFragment;
@@ -19,11 +20,14 @@ import com.example.user.mcfm.ViewPager_fragment.FourthFragment;
 import com.example.user.mcfm.ViewPager_fragment.SecondFragment;
 import com.example.user.mcfm.ViewPager_fragment.ThirdFragment;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private PagerAdapter pagerAdapter;
     private TabLayout tabLayout;
     private TextView main_activity_setTitle;
+    private final long FINISH_INTERVAL_TIME = 2000;
+    private long backPressedTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,29 +36,32 @@ public class MainActivity extends AppCompatActivity{
         initViewPager();
         initStatusbar();
     }
-    private void init(){
-        main_activity_setTitle = (TextView)findViewById(R.id.main_activity_setTitle);
+
+    private void init() {
+        main_activity_setTitle = (TextView) findViewById(R.id.main_activity_setTitle);
     }
-    private void initStatusbar(){
+
+    private void initStatusbar() {
         View view = getWindow().getDecorView();
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            if(view!=null){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (view != null) {
                 view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
                 getWindow().setStatusBarColor(Color.parseColor("#ffc0cb"));
             }
-        }else getWindow().setStatusBarColor(Color.parseColor("#000"));
+        } else getWindow().setStatusBarColor(Color.parseColor("#000"));
     }
+
     private void initViewPager() {
-        viewPager = (ViewPager)findViewById(R.id.ViewPager);
+        viewPager = (ViewPager) findViewById(R.id.ViewPager);
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
-        tabLayout = (TabLayout)findViewById(R.id.tab);
+        tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.people));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_chat));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_calendar));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_settings_work_tool));
         viewPager.setOffscreenPageLimit(4);
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -103,26 +110,46 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
-    private class PagerAdapter extends FragmentStatePagerAdapter{
+
+    private class PagerAdapter extends FragmentStatePagerAdapter {
         public PagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     return new FirstFragment();
                 case 1:
                     return new SecondFragment();
                 case 2:
                     return new ThirdFragment();
-                case 3:return new FourthFragment();
-            }return null;
+                case 3:
+                    return new FourthFragment();
+            }
+            return null;
         }
+
         @Override
         public int getCount() {
             return 4;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+        if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime) {
+            super.onBackPressed();
+        } else {
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "종료하시려면 한번더 눌러주세요", Toast.LENGTH_SHORT).show();
+        }
+
+
     }
 }

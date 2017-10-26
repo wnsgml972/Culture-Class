@@ -66,6 +66,7 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getContext().deleteDatabase("Write");   //db 드랍
         if(getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -272,4 +273,5 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
             }
         }
     }
+
 }

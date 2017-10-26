@@ -74,7 +74,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 ChatRoomReference.child(getName).setValue(item);
                 /* 스크롤 맨 밑으로 내리기, 어댑터 갱신하기 */
                 chatActivity_recyclerView_adapter.notifyDataSetChanged();
-                chatActivity_recyclerView.scrollToPosition(chatActivity_recyclerView.getAdapter().getItemCount() - 1);
+                chatActivity_recyclerView.getLayoutManager().scrollToPosition(chatActivity_recyclerView.getAdapter().getItemCount() - 1);
                 break;
         }
     }

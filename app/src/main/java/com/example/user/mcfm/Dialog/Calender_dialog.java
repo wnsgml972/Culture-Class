@@ -56,8 +56,9 @@ public class Calender_dialog extends AppCompatActivity implements View.OnClickLi
                 try {
                     SQLiteDatabase db = dbManager.getWritableDatabase();
                     db.execSQL("CREATE TABLE if not exists '" + DB_NAME + "' (content TEXT)");
-                    Conte
-                    db.insert("'"+DB_NAME+"'",null,)
+                    /* 원균오빠 코드 오류 */
+                    //Conte
+                    //db.insert("'"+DB_NAME+"'",null,)
                 }catch (SQLiteException e){
                     e.printStackTrace();
                 }

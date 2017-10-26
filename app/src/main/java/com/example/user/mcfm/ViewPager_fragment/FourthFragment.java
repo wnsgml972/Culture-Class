@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.CursorLoader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,7 @@ import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,21 +69,6 @@ public class FourthFragment extends Fragment {
         return view;
     }
 
-    private String getPath(Uri uri) {    //이미지의 절대경로 얻는함수
-        String result;
-        Cursor cursor = getContext().getContentResolver().query(uri, null, null, null, null);
-
-        if (cursor == null) { // Source is Dropbox or other similar local file path
-            result = uri.getPath();
-
-        } else {
-            cursor.moveToFirst();
-            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-            result = cursor.getString(idx);
-            cursor.close();
-        }
-        return result;
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -88,10 +76,16 @@ public class FourthFragment extends Fragment {
         if (requestCode == REQEUST_OK) {
             if (resultCode == Activity.RESULT_OK) {
                 Intent photo_intent = new Intent(Contact.SetProfilePhoto);
-                photo_intent.putExtra("ph", String.valueOf(data.getData()));
-                getContext().sendBroadcast(photo_intent);
 
-                Picasso.with(getContext()).load(Uri.parse(String.valueOf(data.getData()))).transform(new CropCircleTransformation()).into(fourth_fragment_profile_Item_Image);
+
+                Log.e("FOURTH_FRAGMENT_DATA",getImageNameToUri(data.getData()));
+                String real = getImageNameToUri(data.getData());
+                photo_intent.putExtra("ph", real);
+                getContext().sendBroadcast(photo_intent);
+                //File file = new File(real);
+                //Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+
+                Picasso.with(getContext()).load(Uri.fromFile(new File(real))).transform(new CropCircleTransformation()).into(fourth_fragment_profile_Item_Image);
 
                 //Bitmap photo = (Bitmap) data.getExtras().get("data");
                 /*try {
@@ -107,19 +101,20 @@ public class FourthFragment extends Fragment {
         }
     }
 
-   /* public String getImageNameToUri(Uri data)
+     public String getImageNameToUri(Uri data)
     {
         String[] proj = { MediaStore.Images.Media.DATA };
-        Cursor cursor = managedQuery(data, proj, null, null, null);
+        CursorLoader cursorLoader = new CursorLoader(getContext(),data,proj,null,null,null);
+        Cursor cursor = cursorLoader.loadInBackground();
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
 
         cursor.moveToFirst();
 
-        String imgPath = cursor.getString(column_index);
-        String imgName = imgPath.substring(imgPath.lastIndexOf("/")+1);
+        /*String imgPath = cursor.getString(column_index);
+        String imgName = imgPath.substring(imgPath.lastIndexOf("/")+1);*/
 
-        return imgName;
-    }*/
+        return cursor.getString(column_index);
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

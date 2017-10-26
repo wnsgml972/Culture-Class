@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                tab.getIcon().setColorFilter(getColor(R.color.color_Black), PorterDuff.Mode.SRC_IN);
+                tab.getIcon().setColorFilter(getColor(R.color.color_Gray), PorterDuff.Mode.SRC_IN);
             }
 
             @Override

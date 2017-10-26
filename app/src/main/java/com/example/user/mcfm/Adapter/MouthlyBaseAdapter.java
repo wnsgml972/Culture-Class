@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,6 +90,7 @@ public class MouthlyBaseAdapter extends BaseAdapter {
                         intent.putExtra(Contact.YEAR, (calendar.get(Calendar.YEAR)));
                         intent.putExtra(Contact.MONTH, (calendar.get(Calendar.MONTH) + 1));
                         intent.putExtra(Contact.DAY, (position + 1 - (calendar.get(Calendar.DAY_OF_WEEK) - 1)));
+                        Log.e("MONTHLYBASE_ADAPTER",calendar.get(Calendar.YEAR)+(calendar.get(Calendar.MONTH) + 1)+(position + 1 - (calendar.get(Calendar.DAY_OF_WEEK) - 1))+"");
                         context.sendBroadcast(intent);
                     }
                 });

@@ -1,6 +1,8 @@
 package com.example.user.mcfm.Dialog;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 
 import com.example.user.mcfm.DB.DBManager;
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Util.Contact;
 
 /**
  * Created by choi on 2017-10-26.
@@ -27,6 +30,7 @@ public class Calender_dialog extends AppCompatActivity implements View.OnClickLi
     private String getTitle;
     private String DB_NAME;
     private DBManager dbManager;
+    private Cursor cursor;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,20 @@ public class Calender_dialog extends AppCompatActivity implements View.OnClickLi
         title.setText(getTitle);
 
         dbManager = new DBManager(getApplicationContext(),"Write",null,1);
+
+        dbManager = new DBManager(getApplicationContext(), "Write", null, 1);
+        SQLiteDatabase redadb = dbManager.getReadableDatabase();
+        try {
+            cursor = redadb.query("'" + DB_NAME + "'", null, null, null, null, null, null);
+
+            for (int i = 0; i < cursor.getCount(); i++) {
+                cursor.moveToPosition(i);
+                Log.e("MOVE_TO_NEXT",cursor.getString(0));
+                String a = cursor.getString(0).toString();
+                content.setText(a);
+            }
+        } catch (SQLiteException e) {
+        }
     }
 
     @Override
@@ -55,13 +73,16 @@ public class Calender_dialog extends AppCompatActivity implements View.OnClickLi
                 Log.e("CHECK_",DB_NAME);
                 try {
                     SQLiteDatabase db = dbManager.getWritableDatabase();
-                    db.execSQL("CREATE TABLE if not exists '" + DB_NAME + "' (content TEXT)");
-                    /* 원균오빠 코드 오류 */
-                    //Conte
-                    //db.insert("'"+DB_NAME+"'",null,)
+                    db.execSQL("CREATE TABLE if not exists '" + DB_NAME + "' (content TEXT);");
+                    ContentValues values =new ContentValues();
+                    values.put("content",content.getText().toString());
+                    db.insert("'"+DB_NAME+"'",null,values);
+                    db.close();
                 }catch (SQLiteException e){
                     e.printStackTrace();
                 }
+                sendBroadcast(new Intent(Contact.SAVE_DB));
+                finish();
                 break;
         }
     }

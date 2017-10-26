@@ -219,11 +219,13 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
         ArrayList title = new ArrayList();
         ArrayList jsonarray = new ArrayList();
         Calendar calendar;
-
+        String a;
         @Override
         protected Object doInBackground(Object[] objects) {
             dbManager = new DBManager(getContext(), "Write", null, 1);
             redadb = dbManager.getReadableDatabase();
+            starttime = null;
+            starttime = new ArrayList();
             String table_name = String.valueOf(Year) + String.valueOf(Month) + String.valueOf(Day);
             Log.e("THIRD_FRAGMENT_ASYNCTASK",table_name);   //테이블 이름
             calendar = Calendar.getInstance();
@@ -232,12 +234,15 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
             calendar.set(Calendar.DATE, Day);
             try {
                 cursor = redadb.query("'" + table_name + "'", null, null, null, null, null, null);
+
                 for (int i = 0; i < cursor.getCount(); i++) {
                     cursor.moveToPosition(i);
-                    starttime.add(cursor.getString(1));
-                    endtime.add(cursor.getString(2));
+                    Log.e("MOVE_TO_NEXT",cursor.getString(0));
+                    a = cursor.getString(0).toString();
+                    starttime.add(cursor.getString(0));
+                    /*endtime.add(cursor.getString(2));
                     title.add(cursor.getString(3));
-                    jsonarray.add(cursor.getString(4));
+                    jsonarray.add(cursor.getString(4));*/
                 }
             } catch (SQLiteException e) {
             }
@@ -251,13 +256,19 @@ public class ThirdFragment extends Fragment implements ViewPager.OnPageChangeLis
             return null;
         }
 
+
         @Override
         protected void onPostExecute(Object o) {
             super.onPostExecute(o);
+
             if (starttime.size() > 0) {
-                null_calendar_text.setVisibility(View.GONE);
+                null_calendar_text.setVisibility(View.VISIBLE);
+                Log.e("일정들옴 ?","ㅇㅇ");
+                null_calendar_text.setText(starttime.get(starttime.size()-1).toString());
+                Log.e("뭔내용임 ?",starttime.get(0).toString());
             } else {
                 null_calendar_text.setVisibility(View.VISIBLE);
+                null_calendar_text.setText("내용이없습니다");
             }
         }
     }

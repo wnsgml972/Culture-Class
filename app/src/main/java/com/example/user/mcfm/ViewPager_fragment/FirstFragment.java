@@ -51,7 +51,7 @@ public class FirstFragment extends Fragment {
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Contact.SetProfilePhoto);
-        getActivity().registerReceiver(receiver, intentFilter);
+        getContext().registerReceiver(receiver, intentFilter);
 
 
         return view;

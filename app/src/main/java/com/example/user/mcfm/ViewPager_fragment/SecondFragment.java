@@ -48,7 +48,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("asd");
-        getActivity().registerReceiver(broadcastReceiver, intentFilter);
+        getContext().registerReceiver(broadcastReceiver, intentFilter);
 
         return view;
     }

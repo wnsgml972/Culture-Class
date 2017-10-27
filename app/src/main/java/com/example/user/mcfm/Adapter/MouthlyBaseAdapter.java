@@ -158,7 +158,7 @@ public class MouthlyBaseAdapter extends BaseAdapter {
             int count = (int) o;
             if (count > 0) {
                 Picasso.with(context).load(R.drawable.write_circle_background).fit().into(v.write_circle);
-                v.write_count_text.setText("X " + count);
+                //v.write_count_text.setText("X " + count); 몇개인지구분했던 코드
             }
         }
     }

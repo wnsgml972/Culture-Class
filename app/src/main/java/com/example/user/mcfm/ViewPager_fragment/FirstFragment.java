@@ -51,7 +51,7 @@ public class FirstFragment extends Fragment {
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(Contact.SetProfilePhoto);
-        getActivity().registerReceiver(receiver, intentFilter);
+        getContext().registerReceiver(receiver, intentFilter);
 
 
         return view;
@@ -67,6 +67,23 @@ public class FirstFragment extends Fragment {
 
         first_recyclerView_items.add(new First_RecyclerView_Item("홍길동","성북구"));
         first_recyclerView_items.add(new First_RecyclerView_Item("황진이","성동구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
         first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
 
         first_recyclerView_adapter = new First_RecyclerView_Adapter(getContext(),first_recyclerView_items);

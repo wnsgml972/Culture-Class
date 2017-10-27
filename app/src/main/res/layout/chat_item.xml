@@ -30,8 +30,12 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="16dp"
-                android:background="@drawable/chat_not_me"
-                android:padding="5dp"
+                android:background="@drawable/speech_bubble_your"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textSize="18dp"
                 android:text="asd"
                 android:textColor="@color/color_Black" />
         </RelativeLayout>

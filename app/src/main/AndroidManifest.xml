@@ -48,9 +48,7 @@
         <activity android:name=".Dialog.First_Recycler_Item_Click_confirm_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog"
             />
-        <activity android:name=".Dialog.SubmitReportDialog"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            />
+
         <activity android:name=".Report.TutorReportActivity"
             />
         <activity android:name=".Report.TuteeReportActivity"

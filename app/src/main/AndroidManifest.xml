@@ -53,6 +53,8 @@
             />
         <activity android:name=".Report.TutorReportActivity"
             />
+        <activity android:name=".Report.TuteeReportActivity"
+            />
         <activity android:name=".Dialog.Fourth_Recycler_Item_QNA_Dialog"
             android:theme="@style/Theme.AppCompat.Dialog"
             />

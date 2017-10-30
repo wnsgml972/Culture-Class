@@ -49,6 +49,7 @@
         android:layout_width="match_parent"
         />
     <TextView
+        android:id="@+id/first_tuti_tutor_text"
         android:textColor="@color/color_Gray"
         android:layout_marginLeft="12dp"
         android:text="매칭 가능 상대"

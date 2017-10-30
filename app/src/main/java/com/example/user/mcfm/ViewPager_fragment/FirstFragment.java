@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.user.mcfm.Adapter.First_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.First_RecyclerView_Item;
+import com.example.user.mcfm.Main.MainActivity;
 import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;
@@ -35,6 +36,7 @@ import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 public class FirstFragment extends Fragment {
     private ImageView first_Myprofile_Image;
+    private TextView tuti_tutor;
     private TextView first_Myprofile_Name;
     private RecyclerView first_RecyclerView;
     private First_RecyclerView_Adapter first_recyclerView_adapter;
@@ -45,7 +47,15 @@ public class FirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         first_Myprofile_Image = (ImageView) view.findViewById(R.id.first_Myprofile_Image);
         first_Myprofile_Name = (TextView) view.findViewById(R.id.first_Myprofile_Name);
+        tuti_tutor = (TextView)view.findViewById(R.id.first_tuti_tutor_text);
         first_RecyclerView = (RecyclerView) view.findViewById(R.id.first_RecyclerView);
+
+        if(MainActivity.flag==0){
+            tuti_tutor.setText("매칭 가능한 튜티");
+        }else{
+            tuti_tutor.setText("매칭 가능한 튜터");
+        }
+
         setRecyclerView();
 
 
@@ -65,26 +75,55 @@ public class FirstFragment extends Fragment {
     private void setRecyclerView(){
         first_recyclerView_items = new ArrayList<First_RecyclerView_Item>();
 
-        first_recyclerView_items.add(new First_RecyclerView_Item("홍길동","성북구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("황진이","성동구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
-        first_recyclerView_items.add(new First_RecyclerView_Item("어우동","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김영수","강남구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("최영호","강동구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("이영식","강서구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("최정웅","관악구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김영길","광진구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("이영일","구로구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김정수","금천구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("이정남","노원구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("정광수","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한정수","동대문구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김영철","동작구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한성수","마포구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("정성호","서대문구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("이영자","서초구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김지영","성동구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("최혜진","성북구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("정은주","송파구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한선영","양천구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("서수빈","영등포구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김지원","용산구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("정지은","은평구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("신현지","종로구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김서영","중구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("민지원","중랑구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김화자","강남구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("도영순","강동구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("조영미","강서구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한지영","관악구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("조은영","광진구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한아름","구로구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("추자현","금천구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("정준호","노원구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("조상현","도봉구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한준영","동대문구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("서준혁","동작구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("도현준","마포구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("송승민","서대문구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("오명자","서초구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("김미영","성동구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("이자현","성북구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("박보람","송파구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("임예진","양천구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("임수진","영등포구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("한미영","용산구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("조경자","은평구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("조영희","종로구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("기현정","중구"));
+        first_recyclerView_items.add(new First_RecyclerView_Item("조광수","중랑구"));
+
 
         first_recyclerView_adapter = new First_RecyclerView_Adapter(getContext(),first_recyclerView_items);
         first_RecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView main_activity_setTitle;
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime = 0;
-    static int flag;
+    public static int flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

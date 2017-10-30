@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 
 import com.example.user.mcfm.Adapter.Fourth_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.Fourth_RecyclerView_Item;
+import com.example.user.mcfm.Main.MainActivity;
 import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
 import com.squareup.picasso.Picasso;
@@ -126,7 +127,11 @@ public class FourthFragment extends Fragment {
 
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("공지사항", R.drawable.fourth_item_speaker));
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("관심 지역 정보", R.drawable.fourth_item_tuty));
-        fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("보고서 쓰기", R.drawable.fourth_item_report));
+        if(MainActivity.flag == 0)
+            fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("보고서 쓰기", R.drawable.fourth_item_report));
+        else if(MainActivity.flag == 1){
+            fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("후기 작성", R.drawable.fourth_item_report));
+        }
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("버전정보", R.drawable.fourth_item_i));
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("도움말", R.drawable.fourth_item_qna));
         fourth_recyclerView_items.add(new Fourth_RecyclerView_Item("개발자", R.drawable.fourth_item_developer));

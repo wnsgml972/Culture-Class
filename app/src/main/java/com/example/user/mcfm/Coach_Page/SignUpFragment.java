@@ -83,7 +83,7 @@ public class SignUpFragment extends Fragment {
                 flag = 1;
             }
         });
-
+        createButton.setEnabled(true);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +102,7 @@ public class SignUpFragment extends Fragment {
                                         Coach_activity coach_activity =  (Coach_activity) getActivity();
                                         ((OnApplySelectedListener)activity).onCatagoryApplySelected(flag);
                                         coach_activity.setFragment(new LoginFragment(flag));
+                                        createButton.setEnabled(false);
 
                                     }
                                 })

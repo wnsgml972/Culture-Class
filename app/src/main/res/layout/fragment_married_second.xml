@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:foregroundGravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_Coach">
+
+        <TextView
+            android:id="@+id/fm_tv_10_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="정착 초기 단계의\r\n결혼 이민자들에게 멘토와 함께"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_10_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="공공기관 및 대중교통을 이용해보거나\r\n한국음식 체험 및 만들기\r\n또는 정서적 상담 등"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_10_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="멘티들이 한국 사회에 살아가면서\r\n필요한 내용들을 경험에 기반하여\r\n알려주는 프로그램이에요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_Coach"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/fm_bt_10_1"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:text="다음"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.user.mcfm.Main;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
@@ -10,11 +11,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Util.Contact;
 import com.example.user.mcfm.ViewPager_fragment.FirstFragment;
 import com.example.user.mcfm.ViewPager_fragment.FourthFragment;
 import com.example.user.mcfm.ViewPager_fragment.SecondFragment;
@@ -40,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         main_activity_setTitle = (TextView) findViewById(R.id.main_activity_setTitle);
+        Intent intent = getIntent();
+        int flag = intent.getIntExtra("getFlag",0);
+        Log.e("flag_check----",flag+"");
     }
 
     private void initStatusbar() {
@@ -136,6 +142,14 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return 4;
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Contact.mento_list.clear();
+
     }
 
     @Override

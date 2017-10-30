@@ -42,6 +42,8 @@ public class Second_RecyclerView_Adapter extends RecyclerView.Adapter<Second_Rec
         this.context = context;
         this.second_recyclerView_items = second_recyclerView_items;
         this.testCallback = testCallback;
+
+
     }
 
     @Override

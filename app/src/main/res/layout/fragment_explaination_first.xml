@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:foregroundGravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_Coach">
+
+        <TextView
+            android:id="@+id/fm_tv_5_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="최근 한국사회 내 다문화가정의\r\n수가 급속히 증가하면서\r\n여러 가지 문제가 나타나고 있어요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_5_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="그 중에서도 다문화가정 학습 및\r\n결혼 이민 여성 교육은 가장 심각한\r\n문제 중의 하나로 여겨지고 있어요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_5_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="대부분의 다문화가정은\r\n낮은 소득수준으로 인한 경제적\r\n어려움으로 체계적인 교육을\r\n받는 것이 어려운 형편이에요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_Coach"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/fm_bt_5_1"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:text="다음"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

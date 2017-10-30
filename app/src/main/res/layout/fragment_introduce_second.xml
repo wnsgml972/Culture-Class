@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:foregroundGravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_Coach">
+
+        <TextView
+            android:id="@+id/fm_tv_4_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="다문화 가정 멘토링에는\r\n크게 두 가지 멘토링이 있어요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_4_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="첫 번째, 학습 지도 멘토링\r\n두 번째, 결혼 이민자 멘토링\r\n이렇게 두가지 멘토링이 진행되고 있어요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_4_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="조금 더 자세히 설명을\r\n듣고 싶은 멘토링이 있으신가요?"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_Coach"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/fm_bt_4_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/color_WHITE"
+            android:text="학습 지도 멘토링에 대하여 알고싶어요"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:visibility="invisible"
+            tools:paddingBottom="1dp" />
+
+        <Button
+            android:id="@+id/fm_bt_4_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/color_WHITE"
+            android:text="결혼 이민자 멘토링에 대하여 알고싶어요"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:visibility="invisible"
+            tools:paddingBottom="1dp" />
+
+        <Button
+            android:id="@+id/fm_bt_4_3"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_WHITE"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:text="설명을 충분히 들은 것 같아요"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

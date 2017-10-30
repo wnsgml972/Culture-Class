@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:foregroundGravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_Coach">
+
+        <TextView
+            android:id="@+id/fm_tv_1_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="안녕하세요?"
+            android:textAlignment="center"
+            android:textColor="@color/color_CoachText"
+            android:textSize="20dp"
+            android:visibility="invisible"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="저희는 다문화 멘토링 도우미 입니다."
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_1_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="저희 어플리케이션을 방문해\r\n보신적이 있으신가요?"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_Coach"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/fm_bt_1_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#ffffff"
+            android:text="처음 방문했어요"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:visibility="invisible"
+            tools:paddingBottom="1dp" />
+
+        <Button
+            android:id="@+id/fm_bt_1_2"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:text="방문해 본적 있어요"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

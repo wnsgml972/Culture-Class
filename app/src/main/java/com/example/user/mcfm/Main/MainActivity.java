@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView main_activity_setTitle;
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime = 0;
+    static int flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         main_activity_setTitle = (TextView) findViewById(R.id.main_activity_setTitle);
         Intent intent = getIntent();
-        int flag = intent.getIntExtra("getFlag",0);
+        flag = intent.getIntExtra("getFlag",0);
         Log.e("flag_check----",flag+"");
     }
 

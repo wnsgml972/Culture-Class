@@ -16,7 +16,9 @@ import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_I_Dialog;
 import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_QNA_Dialog;
 import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_Speaker_Dialog;
 import com.example.user.mcfm.Dialog.Fourth_Recycler_Item_Tuty_Dialog;
+import com.example.user.mcfm.Main.MainActivity;
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Report.TuteeReportActivity;
 import com.example.user.mcfm.Report.TutorReportActivity;
 
 import java.util.List;
@@ -77,7 +79,10 @@ public class Fourth_RecyclerView_Adapter extends RecyclerView.Adapter<Fourth_Rec
                             intent = new Intent(view.getContext(), Fourth_Recycler_Item_Tuty_Dialog.class);
                             break;
                         case 2:
-                            intent = new Intent(view.getContext(), TutorReportActivity.class);
+                            if(MainActivity.flag == 0)
+                                intent = new Intent(view.getContext(), TutorReportActivity.class);
+                            else
+                                intent = new Intent(view.getContext(), TuteeReportActivity.class);
                             break;
                         case 3:
                             intent = new Intent(view.getContext(), Fourth_Recycler_Item_I_Dialog.class);

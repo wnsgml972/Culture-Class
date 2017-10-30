@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.example.user.mcfm.Main.MainActivity;
 import com.example.user.mcfm.R;
 import com.example.user.mcfm.Util.Contact;
 
@@ -41,12 +42,22 @@ public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implemen
 
         double randdomvalue = Math.random();
         int intValue = (int)(randdomvalue*2)+1;
-        if(intValue ==1){
-            mentoType.setText(Contact.mento_Type_one);
-            mentoIntroduce.setText(Contact.mento_introduce_one);
-        }else{
-            mentoType.setText(Contact.mento_Type_two);
-            mentoIntroduce.setText(Contact.mento_introduce_two);
+        if(MainActivity.flag == 0) {
+            if (intValue == 1) {
+                mentoType.setText(Contact.mento_Type_one);
+                mentoIntroduce.setText(Contact.menti_introduce_one);
+            } else {
+                mentoType.setText(Contact.mento_Type_two);
+                mentoIntroduce.setText(Contact.menti_introduce_two);
+            }
+        }else {
+            if (intValue == 1) {
+                mentoType.setText(Contact.mento_Type_one);
+                mentoIntroduce.setText(Contact.mento_introduce_one);
+            } else {
+                mentoType.setText(Contact.mento_Type_two);
+                mentoIntroduce.setText(Contact.mento_introduce_two);
+            }
         }
 
         ok.setOnClickListener(this);

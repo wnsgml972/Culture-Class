@@ -51,9 +51,9 @@ public class FirstFragment extends Fragment {
         first_RecyclerView = (RecyclerView) view.findViewById(R.id.first_RecyclerView);
 
         if(MainActivity.flag==0){
-            tuti_tutor.setText("매칭 가능한 튜티");
+            tuti_tutor.setText("매칭 가능한 맨티");
         }else{
-            tuti_tutor.setText("매칭 가능한 튜터");
+            tuti_tutor.setText("매칭 가능한 맨토");
         }
 
         setRecyclerView();

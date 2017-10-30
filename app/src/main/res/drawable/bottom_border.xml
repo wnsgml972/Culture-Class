@@ -6,7 +6,7 @@
             <solid android:color="@android:color/transparent" />
             <stroke
                 android:width="2dp"
-                android:color="@color/state_bar_color" />
+                android:color="@color/diagram_top" />
         </shape>
     </item>
 </layer-list>

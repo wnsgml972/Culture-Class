@@ -14,5 +14,6 @@
     <color name="white">#ffffff</color>
     <color name="balck">#000000</color>
     <color name="state_bar_color">#ffffff</color>
+    <color name="diagram_top">#F6CED8</color>
 
 </resources>

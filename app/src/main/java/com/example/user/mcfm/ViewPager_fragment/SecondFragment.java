@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.user.mcfm.Adapter.Second_RecyclerView_Adapter;
 import com.example.user.mcfm.Adapter_Item.ChatActivity_RecyclerView_Item;
@@ -32,6 +33,7 @@ import java.util.List;
  */
 
 public class SecondFragment extends Fragment implements View.OnClickListener{
+    private TextView null_second;
     private Second_RecyclerView_Adapter second_recyclerView_adapter;
     private List<Second_RecyclerView_Item> second_recyclerView_items;
     private RecyclerView second_RecyclerView;
@@ -46,8 +48,12 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
         View view = inflater.inflate(R.layout.fragment_second,container,false);
         second_RecyclerView = (RecyclerView)view.findViewById(R.id.second_RecyclerView);
         setRecyclerView();
-
-
+        null_second = (TextView)view.findViewById(R.id.null_second_item);
+        if(second_recyclerView_items.size()==0){
+            null_second.setVisibility(view.VISIBLE);
+        }else {
+            null_second.setVisibility(view.INVISIBLE);
+        }
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("asd");
         getContext().registerReceiver(broadcastReceiver, intentFilter);
@@ -89,7 +95,7 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
             if(intent.getAction().equals("asd")){
                 String getName = intent.getStringExtra("name");
                 Log.e("잘옴!",getName);
-
+                null_second.setVisibility(getView().INVISIBLE);
                 second_recyclerView_items.add(new Second_RecyclerView_Item(getName,"",""));
                 second_recyclerView_adapter.notifyDataSetChanged();
                 chat.child(getName).removeValue();    // chat 지우는 코드

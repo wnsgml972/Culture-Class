@@ -36,6 +36,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         userID=(EditText) view.findViewById(R.id.username);
         userPWD=(EditText)view.findViewById(R.id.password);
         sign_btn = (Button)view.findViewById(R.id.sign_in_btn);
+        sign_btn.setEnabled(true);
         sign_btn.setOnClickListener(this);
         return view;
     }
@@ -49,7 +50,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
             @Override
             public void run() {
                 userID.setText("Seoul@naver.com");
-                userPWD.setText("fuckthatSuck");
+                userPWD.setText("helloSeoul");
             }
         },1500);
 
@@ -63,7 +64,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
                 Intent intent = new Intent(getContext().getApplicationContext(), MainActivity.class);
                 intent.putExtra("getFlag",flag);
                 getContext().startActivity(intent);
-
+                sign_btn.setEnabled(false);
                 break;
         }
     }

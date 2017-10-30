@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:padding="30dp"
     android:background="@drawable/background"
-    android:weightSum="1"
+    android:layout_weight="0.15"
+
     >
 
     <TextView
@@ -17,20 +18,27 @@
         android:layout_gravity="left"
         android:fontFamily="casual"
         android:paddingBottom="20dp"
-        android:paddingTop="10dp"
         android:text="New Account"
+        android:textColor="@color/balck"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_weight="0.2"
+     />
 
 
     <ImageButton
         android:id="@+id/userPhoto"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/button2"
-        app:srcCompat="@drawable/photo" />
+        app:srcCompat="@drawable/photo"
+        android:layout_weight="0.3"
+        />
+
+
     <LinearLayout
+        android:layout_weight="0.15"
         android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +66,7 @@
             android:textColorHint="#999" />
     </LinearLayout>
     <LinearLayout
-
+        android:layout_weight="0.15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -86,6 +94,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_weight="0.15"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -98,7 +107,6 @@
             android:layout_gravity="center"
             app:srcCompat="@drawable/password" />
         <EditText
-
             android:id="@+id/userpwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,7 +123,7 @@
 
     </LinearLayout>
     <LinearLayout
-
+        android:layout_weight="0.15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -172,6 +180,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_weight="0.15"
         >
 
         <ImageView
@@ -181,13 +190,16 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/tutor" />
+
         <TextView
-            android:paddingLeft="10dp"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tutor"/>
+            android:fontFamily="casual"
+            android:paddingLeft="10dp"
+            android:text="Tutor"
+            android:textColor="@color/balck"
+            android:textStyle="bold" />
 
         <RadioButton
             android:buttonTint="#45ac79"
@@ -210,6 +222,7 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/balck"
             android:text="Tutee"/>
 
         <RadioButton
@@ -223,10 +236,12 @@
     </LinearLayout>
 
     <Button
+        android:layout_weight="0.15"
         android:layout_width="277dp"
         android:layout_height="42dp"
         android:layout_marginTop="30dp"
         android:text="Create"
+        android:textColor="@color/balck"
         android:fontFamily="casual"
         android:id="@+id/createButton"
         android:layout_gravity="center_horizontal"

@@ -62,7 +62,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
                 Intent intent = new Intent(getContext().getApplicationContext(), MainActivity.class);
                 intent.putExtra("getFlag",flag);
+
                 getContext().startActivity(intent);
+                getActivity().finish();
 
                 break;
         }

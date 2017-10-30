@@ -22,7 +22,9 @@ import com.example.user.mcfm.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -56,20 +58,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
-       /* chatRoom.child(second_recyclerView_items.get(posi)).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                chatRoom.
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-*/
     }
     private void setRecyclerView(){
         second_recyclerView_items = new ArrayList<Second_RecyclerView_Item>();
@@ -81,8 +69,6 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-
-
     }
     private TestCallback testCallback = new TestCallback() {
         @Override
@@ -103,7 +89,23 @@ public class SecondFragment extends Fragment implements View.OnClickListener{
             if(intent.getAction().equals("asd")){
                 String getName = intent.getStringExtra("name");
                 Log.e("잘옴!",getName);
+
                 second_recyclerView_items.add(new Second_RecyclerView_Item(getName,"",""));
+                second_recyclerView_adapter.notifyDataSetChanged();
+                chat.child(getName).removeValue();    // chat 지우는 코드
+                chatRoom.child(getName).removeValue();
+                long now  = System.currentTimeMillis();
+                Date date = new Date(now);
+                SimpleDateFormat setformat = new SimpleDateFormat("HH:mm");
+                String time  = setformat.format(date);
+                ChatActivity_RecyclerView_Item item = new ChatActivity_RecyclerView_Item(getName,"반갑습니다",time,0);
+                ChatActivity_RecyclerView_Item item2 = new ChatActivity_RecyclerView_Item(getName,"앞으로 잘 부탁 드립니다.",time,0);
+
+                chat.child(getName).push().setValue(item);
+                chat.child(getName).push().setValue(item2);
+
+                chatRoom.child(getName).setValue(item);
+
                 second_recyclerView_adapter.notifyDataSetChanged();
             }
         }

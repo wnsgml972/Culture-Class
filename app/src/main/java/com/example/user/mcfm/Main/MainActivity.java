@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.mcfm.R;
+import com.example.user.mcfm.Util.Contact;
 import com.example.user.mcfm.ViewPager_fragment.FirstFragment;
 import com.example.user.mcfm.ViewPager_fragment.FourthFragment;
 import com.example.user.mcfm.ViewPager_fragment.SecondFragment;
@@ -136,6 +137,14 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return 4;
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Contact.mento_list.clear();
+
     }
 
     @Override

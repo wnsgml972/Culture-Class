@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:foregroundGravity="center"
+        android:layout_weight="1"
+        android:background="@color/color_Coach">
+
+        <TextView
+            android:id="@+id/fm_tv_7_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="학습 지도 멘토링은 부족한 한글\r\n실력으로 학교생활을 하거나 또래\r\n친구들과 어울리기 힘들거나"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_7_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="수업을 듣는데에 어려움을 겪는\r\n다문화 가정 아동 및 청소년을 대상으로"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/fm_tv_7_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_CoachText"
+            android:text="멘토를 연계하여 맞춤식 학습 및\r\n정서 지원을 제공하는 튜터링이에요"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textSize="20dp"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_Coach"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/fm_bt_7_1"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:textColor="@color/color_Button"
+            android:textSize="17dp"
+            android:text="다음"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -6,6 +6,9 @@
     <color name="color_Black">#000000</color>
     <color name="color_WHITE">#ffffff</color>
     <color name="color_Main">#ffc0cb</color>
+    <color name="color_Coach">#ffc0cb</color>
+    <color name="color_Button">#000000</color>
+    <color name="color_CoachText">#000000</color>
     <color name="color_Gray">#898989</color>
     <color name="color_Lite_Gray">#ececec</color>
     <color name="theme">#81D3EB</color>
@@ -14,5 +17,6 @@
     <color name="white">#ffffff</color>
     <color name="balck">#000000</color>
     <color name="state_bar_color">#ffffff</color>
-
+    <drawable name="bg_select">#2196F3</drawable>
+    <drawable name="bg">#EEEEEE</drawable>
 </resources>

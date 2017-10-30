@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:background="@drawable/background"
+    android:weightSum="1">
+    <TextView
+        android:paddingTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Account"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_gravity="left"
+        android:paddingBottom="20dp"/>
+
+
+    <ImageButton
+        android:id="@+id/userPhoto"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button2"
+        app:srcCompat="@drawable/photo" />
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:id="@+id/imageView4"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/avatar" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="0dp"
+            android:textColor="#333131"
+            android:textColorHint="#999" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:id="@+id/imageView3"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/email" />
+
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="0dp"
+            android:textColor="#333131"
+            android:textColorHint="#999" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+
+            android:id="@+id/imageView2"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/password" />
+        <EditText
+
+            android:id="@+id/userpwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="0dp"
+            android:textColor="#333131"
+            android:textColorHint="#999"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:id="@+id/imageView5"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/birth" />
+
+        <EditText
+            android:id="@+id/userBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Birth Day"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="0dp"
+            android:textColor="#333131"
+            android:textColorHint="#999" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+
+            android:id="@+id/imageView6"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/location" />
+
+        <EditText
+            android:id="@+id/userLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Location"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="0dp"
+            android:textColor="#333131"
+            android:textColorHint="#999" />
+    </LinearLayout>
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+
+            android:id="@+id/tutor"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/tutor" />
+        <TextView
+            android:paddingLeft="10dp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tutor"/>
+
+        <RadioButton
+            android:buttonTint="#45ac79"
+            android:id="@+id/checkTutor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingRight="30dp"
+            />
+        <ImageView
+
+            android:id="@+id/tutee"
+            android:layout_width="26dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/tutee" />
+        <TextView
+            android:paddingLeft="10dp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tutee"/>
+
+        <RadioButton
+            android:buttonTint="#45ac79"
+            android:id="@+id/checkTutee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="277dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="30dp"
+        android:text="Create"
+        android:fontFamily="casual"
+        android:id="@+id/createButton"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:background="@drawable/button" />
+
+</LinearLayout>
+

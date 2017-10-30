@@ -7,12 +7,16 @@
 
     android:layout_width="300dp"
     android:layout_height="400dp">
+
+
+
     <LinearLayout
         android:layout_weight="3.2"
         android:orientation="horizontal"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         >
+
         <ImageView
             android:layout_margin="8dp"
             android:layout_weight="5"
@@ -31,7 +35,6 @@
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />
-
         <ImageButton
             android:id="@+id/first_recycler_item_image_btn"
             android:layout_marginRight="10dp"
@@ -39,7 +42,10 @@
             android:background="@drawable/x_btn"
             android:layout_width="30dp"
             android:layout_height="30dp" />
+
+
         </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -191,4 +197,5 @@
             android:textSize="10sp" />
 
     </LinearLayout>
+
 </LinearLayout>

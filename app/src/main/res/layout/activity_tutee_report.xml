@@ -219,10 +219,12 @@
                 android:text="느낀점" />
 
             <EditText
+                android:background="@drawable/active_border"
                 android:id="@+id/review"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:gravity="top"/>
 
         </LinearLayout>
 

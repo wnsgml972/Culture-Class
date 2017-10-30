@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.user.mcfm.Main.MainActivity;
@@ -21,6 +22,7 @@ public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implemen
     private TextView ok, cancel;
     private TextView mentoType,mentoplace,mentoIntroduce;
     private String getName,getPlace;
+    private ImageButton exit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,14 @@ public class First_Recycler_Item_Click_Dialog extends AppCompatActivity implemen
         setFinishOnTouchOutside(false);         //다이얼로그 테마로 다이얼로그를 띄울때 다른곳을 터치할시에 꺼지는것을 방지
 
         setInit();
+
+        exit = (ImageButton)findViewById(R.id.first_recycler_item_image_btn);
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void setInit() {

@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         main_activity_setTitle = (TextView) findViewById(R.id.main_activity_setTitle);
         Intent intent = getIntent();
-        flag = intent.getIntExtra("getFlag",0);
+        flag = intent.getIntExtra("getFlag",1);
         Log.e("flag_check----",flag+"");
     }
 

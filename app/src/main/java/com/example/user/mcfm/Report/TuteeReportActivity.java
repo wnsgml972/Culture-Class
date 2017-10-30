@@ -35,6 +35,15 @@ public class TuteeReportActivity extends AppCompatActivity {
     private EditText review;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        if(SubmitReportDialog.submit_check == true) {
+            SubmitReportDialog.submit_check = false;
+            finish();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);

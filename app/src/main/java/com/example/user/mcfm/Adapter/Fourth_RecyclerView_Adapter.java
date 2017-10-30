@@ -81,7 +81,7 @@ public class Fourth_RecyclerView_Adapter extends RecyclerView.Adapter<Fourth_Rec
                         case 2:
                             if(MainActivity.flag == 0)
                                 intent = new Intent(view.getContext(), TutorReportActivity.class);
-                            else
+                            else if(MainActivity.flag == 1)
                                 intent = new Intent(view.getContext(), TuteeReportActivity.class);
                             break;
                         case 3:

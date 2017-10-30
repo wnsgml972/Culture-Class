@@ -33,9 +33,7 @@ public class MainSecondFragment extends Fragment {
     private Button button2;
 
     public MainSecondFragment() {
-        // Required empty public constructor
     }
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -54,7 +52,7 @@ public class MainSecondFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setFragment(new LoginFragment());
+                setFragment(new LoginFragment(0));
                 button1.setEnabled(false);
             }
         });
@@ -73,11 +71,6 @@ public class MainSecondFragment extends Fragment {
         startAnimation(flag);
         return view;
     }
-
-    public void button1ClickedListener() {
-
-    }
-
 
     public void initAnimation() {
         flag = 0;

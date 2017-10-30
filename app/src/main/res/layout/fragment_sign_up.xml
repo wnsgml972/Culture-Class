@@ -7,17 +7,20 @@
     android:orientation="vertical"
     android:padding="30dp"
     android:background="@drawable/background"
-    android:weightSum="1">
+    android:weightSum="1"
+    >
+
     <TextView
-        android:paddingTop="10dp"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Account"
-        android:fontFamily="casual"
-        android:textStyle="bold"
-        android:textSize="30dp"
         android:layout_gravity="left"
-        android:paddingBottom="20dp"/>
+        android:fontFamily="casual"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        android:text="New Account"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
 
     <ImageButton
@@ -139,7 +142,6 @@
             android:textColorHint="#999" />
     </LinearLayout>
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

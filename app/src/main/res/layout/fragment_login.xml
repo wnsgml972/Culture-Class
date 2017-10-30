@@ -88,12 +88,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Sign In"
-        android:id="@+id/button"
+        android:id="@+id/sign_in_btn"
         android:layout_gravity="center_horizontal"
         android:fontFamily="casual"
         android:textStyle="bold"
         android:background="@drawable/button"
-        android:onClick="checkLogin"/>
+        />
 
 
     <TextView

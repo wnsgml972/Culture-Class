@@ -101,7 +101,7 @@ public class SignUpFragment extends Fragment {
 
                                         Coach_activity coach_activity =  (Coach_activity) getActivity();
                                         ((OnApplySelectedListener)activity).onCatagoryApplySelected(flag);
-                                        coach_activity.setFragment(new LoginFragment());
+                                        coach_activity.setFragment(new LoginFragment(flag));
 
                                     }
                                 })

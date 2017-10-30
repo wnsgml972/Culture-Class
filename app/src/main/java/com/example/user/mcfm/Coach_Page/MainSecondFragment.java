@@ -52,7 +52,12 @@ public class MainSecondFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setFragment(new LoginFragment(0));
+                LoginFragment loginFragment = new LoginFragment();
+                Bundle bundle = new Bundle(1);
+                bundle.putInt("check",flag);
+                loginFragment.setArguments(bundle);
+
+                setFragment(loginFragment);
                 button1.setEnabled(false);
             }
         });

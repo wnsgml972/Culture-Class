@@ -101,7 +101,11 @@ public class SignUpFragment extends Fragment {
 
                                         Coach_activity coach_activity =  (Coach_activity) getActivity();
                                         ((OnApplySelectedListener)activity).onCatagoryApplySelected(flag);
-                                        coach_activity.setFragment(new LoginFragment(flag));
+                                        LoginFragment loginFragment = new LoginFragment();
+                                        Bundle bundle = new Bundle(1);
+                                        bundle.putInt("check",flag);
+                                        loginFragment.setArguments(bundle);
+                                        coach_activity.setFragment(loginFragment);
                                         createButton.setEnabled(false);
 
                                     }

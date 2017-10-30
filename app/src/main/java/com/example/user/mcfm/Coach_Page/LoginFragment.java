@@ -24,15 +24,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     private EditText userID, userPWD;
     private int flag;
     private Button sign_btn;
-    public LoginFragment(int flag) {
-        this.flag = flag;
-    }
+    public LoginFragment(){}
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_login, container, false);
+
+        flag = getArguments().getInt("check");
+
         userID=(EditText) view.findViewById(R.id.username);
         userPWD=(EditText)view.findViewById(R.id.password);
         sign_btn = (Button)view.findViewById(R.id.sign_in_btn);

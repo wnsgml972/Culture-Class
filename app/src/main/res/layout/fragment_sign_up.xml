@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="30dp"
-    android:background="@drawable/background"
+    android:paddingRight="30dp"
+    android:paddingTop="20dp"
+    android:paddingLeft="30dp"
+    android:paddingBottom="30dp"
+    android:background="@color/color_Coach"
     android:layout_weight="0.15"
 
     >
@@ -16,12 +19,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:fontFamily="casual"
-        android:paddingBottom="20dp"
+        android:paddingBottom="25dp"
         android:text="New Account"
         android:textColor="@color/balck"
         android:textSize="30dp"
-        android:textStyle="bold"
         android:layout_weight="0.2"
      />
 
@@ -195,11 +196,11 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="casual"
+
             android:paddingLeft="10dp"
             android:text="Tutor"
             android:textColor="@color/balck"
-            android:textStyle="bold" />
+           />
 
         <RadioButton
             android:buttonTint="#45ac79"
@@ -218,8 +219,8 @@
             app:srcCompat="@drawable/tutee" />
         <TextView
             android:paddingLeft="10dp"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/balck"
@@ -242,10 +243,9 @@
         android:layout_marginTop="30dp"
         android:text="Create"
         android:textColor="@color/balck"
-        android:fontFamily="casual"
         android:id="@+id/createButton"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
+
         android:background="@drawable/button" />
 
 </LinearLayout>

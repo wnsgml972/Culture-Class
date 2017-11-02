@@ -8,7 +8,7 @@
     android:paddingTop="20dp"
     android:paddingLeft="40dp"
     android:paddingBottom="40dp"
-    android:background="@drawable/background"
+    android:background="@color/color_Coach"
     >
 
     <ImageView
@@ -100,8 +100,6 @@
         android:textSize="13dp"
         android:id="@+id/sign_in_btn"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="casual"
-        android:textStyle="bold"
         android:background="@drawable/button"
         android:textColor="@color/balck"
         />

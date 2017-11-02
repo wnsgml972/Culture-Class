@@ -54,7 +54,7 @@ public class First_Recycler_Item_Click_confirm_Dialog extends AppCompatActivity 
                             @Override
                             public void run() {
                                 NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext());
-                                builder.setSmallIcon(R.drawable.logo);
+                                builder.setSmallIcon(R.drawable.culture);
                                 builder.setContentTitle("매칭 성공");
                                 builder.setContentText("상대방이 매칭에 수락했습니다.");
                                 Contact.mento_list.add(getName);
